@@ -112,6 +112,14 @@ img { max-width: 100%; height: auto;  }
 
 
 
+.hero-media video {
+  width: 100%;     /* عرض كامل الحاوية */
+  max-width: 900px; /* أقصى عرض */
+  height: auto;    /* يحافظ على النسبة */
+  border-radius: 8px; /* زوايا ناعمة مثل الصور */
+  display: block;  /* إزالة الفراغات تحت الفيديو */
+  margin: 0 auto;  /* توسيط الفيديو */
+}
 
 
 
