@@ -116,13 +116,25 @@ img { max-width: 100%; height: auto;  }
   width: 100%;     /* عرض كامل الحاوية */
   max-width: 900px; /* أقصى عرض */
   height: auto;    /* يحافظ على النسبة */
-  border-radius: 8px; /* زوايا ناعمة مثل الصور */
   display: block;  /* إزالة الفراغات تحت الفيديو */
   margin: 0 auto;  /* توسيط الفيديو */
 }
 
 
 
+/* أحجام مختلفة */
+.hero-media {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* لو بدك الوسيط يكون في النص */
+}
+
+.hero-media iframe {
+  width: 100%;
+  max-width: 900px; /* أكبر عرض مسموح */
+  height: 600px; /* ارتفاع ثابت */
+  border: none;
+}
 
 
 
