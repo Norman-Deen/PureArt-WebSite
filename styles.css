@@ -1,0 +1,198 @@
+body {
+  font-family: sans-serif;
+  color: #000;
+  background: #fff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: auto; padding: 0 1rem; }
+.section { padding: 3rem 0; }
+.grid-3 { display: grid; gap: 1.5rem; grid-template-columns: repeat(3, 1fr); }
+
+h1, h2, h3 { margin: 0 0 .5rem; }
+p { margin: .5rem 0; }
+
+img { max-width: 100%; height: auto;  }
+
+.card { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; background: #fff; }
+
+.btn { display: inline-block; padding: .8rem 1rem; text-decoration: none; border-radius: 6px; }
+.btn--primary { background: #4f7cff; color: #fff; }
+.btn--ghost { border: 1px solid #ccc; color: #000; }
+
+
+
+
+
+.site-header {
+  padding: 40px 0;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: column; /* يخليهم فوق بعض */
+  align-items: center;
+  gap: 55px; /* مسافة بين الأقسام */
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين النص والشعار */
+}
+
+.logo-wrapper h2 {
+  margin: 0;
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 200px; /* مسافة بين الروابط */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #4f7cff;
+}
+
+.nav-center img {
+  height: 70px;
+}
+
+
+
+
+
+
+.hero-grid-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0rem;
+}
+
+.hero-media img {
+  width: 900px;  /* تحكم في حجم الصورة */
+  height: auto;
+  border-radius: 8px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+
+.hero-content h1 {
+  font-size: 2rem;       /* حجم العنوان */
+  font-weight: bold;     /* السماكة */
+  margin-bottom: 0.5rem; /* مسافة تحت العنوان */
+  color: #000;           /* لون النص */
+  text-align: center;  
+   margin-top: 0px;
+}
+
+.hero-content p {
+  font-size: 1rem;       /* حجم النص */
+  color: #333;           /* لون أغمق شوي */
+  line-height: 1.6;      /* تباعد الأسطر */
+  margin: 0;             /* إزالة المسافات الافتراضية */
+  text-align: center;    /* محاذاة في الوسط */
+  max-width: 500px;      /* عرض النص الأقصى */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mosaic-head{
+  display:flex; align-items:center; justify-content:center; gap:2rem;
+  margin-bottom:1rem;
+}
+.mosaic-head small{margin-left:auto; color:#444;}
+
+.mosaic{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 120px;
+  grid-auto-flow: dense;
+  gap:10px;                /* تحكم بالمسافة بين الصور */
+}
+
+.tile{
+  margin:0;                /* <- مهم: إلغاء margin الافتراضي للـ figure */
+  overflow:hidden;
+  border-radius:8px;
+  background:#eee;
+}
+.tile img{
+  width:100%; height:100%;
+  object-fit:cover; display:block;
+}
+
+/* أحجام مختلفة */
+.tile.wide { grid-column: span 2; }
+.tile.tall { grid-row: span 2; }
+.tile.big  { grid-column: span 2; grid-row: span 2; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-footer {
+  background: #e8f0ec; /* لون خلفية فاتح */
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.site-footer p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.site-footer img {
+  height: 60px;
+  margin: 15px 0;
+}
+
+.site-footer .copyright {
+  font-size: 0.9rem;
+  color: #444;
+}
