@@ -26,6 +26,44 @@ main {
 
 
 
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  list-style: none;
+}
+
+/* Hide dropdown content by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Menu links */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-menu li a:hover {
+  background: #4f7cff;
+  color: #fff;
+}
 
 
 
