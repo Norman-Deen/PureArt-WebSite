@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Product</title>
+  <title>360</title>
  <link rel="stylesheet" href="../styles.css">
 
 </head>
@@ -24,23 +24,39 @@ fetch("../components/header.html")
 
 <section class="exterior-hero section">
   <div class="container">
-    <img src="../assets/img/interior-bar.jpg" alt="Exteriör">
+    <img src="../assets/img/exterior-bar.jpg" alt="Exteriör">
   </div>
 </section>
 
 <section class="exterior-text section">
   <div class="container">
     <div class="exterior-box">
-      <h2>Film</h2>
+      <h2>360°- AR</h2>
       <p>
-     Videos are becoming increasingly important on social media to create an emotional connection with the consumer.
-      By utilizing an environment image, you can use different camera angles, create camera movements, 
-      and shift focus to highlight the setting.
+        With a 360 feature, you can create a realistic product that can be rotated and turned 
+        to view it from every possible angle.  
       </p>
-      <p>Our mission is to deliver films that inspire and evoke emotion!</p>
+      <p>
+        You can also create ready-made buttons to easily visualize how the product’s color 
+        can be changed.  
+      </p>
+      <p>
+        You can even add functions to show how things move — for example, a drawer that opens.  
+      </p>
+      <h3>AR 3D File</h3>
+      <p>
+        By creating an AR file, you can produce an object that allows the customer to place 
+        the product in their room and see in real time how it would look in their home.  
+      </p>
+      <h3>Interactive</h3>
+      <p>
+        Similar to a video game, you can move through different environments — letting a 
+        customer walk through a property and rotate in 3D to see how the apartment looks.  
+      </p>
     </div>
   </div>
 </section>
+
 
 
 
@@ -57,11 +73,25 @@ fetch("../components/header.html")
       <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
     </div>
 
+
+    <div class="container hero-grid-vertical">
+  <figure class="hero-media">
+    <iframe 
+      src="https://norman-deen.github.io/CarJsShowcase/" 
+      loading="lazy">
+    </iframe>
+  </figure>
+  <div class="hero-content">
+    <h1>High-end 3D & Motion Design</h1>
+    <p>Product renders, animation, and immersive visuals.</p>
+  </div>
+
+
+  
     <p class="ex-more">
       Fler fantastiska verk finns på
       <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">behance.net/pure-art</a>
     </p>
-    <p>De flesta bilder relaterade till badrum designades för MacroDesign</p>
   </div>
 </section>
 
@@ -81,6 +111,7 @@ fetch("../components/footer.html")
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
+
 </script>
 
 

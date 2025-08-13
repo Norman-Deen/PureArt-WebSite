@@ -10,20 +10,15 @@
 <body>
 
 
-  <!-- HEADER -->
-<header class="site-header">
-  <nav class="nav-center">
-    <div class="logo-wrapper">
-      <h2>Pure Art</h2>
-      <img src="/assets/img/Logo-01.jpg" alt="Showcase render" loading="lazy" />
-    </div>
-    <div class="nav-links">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+<!-- Header -->
+<div id="header"></div>
+<script>
+fetch("../components/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 
 
 
@@ -50,6 +45,25 @@
 
 
 
+<section class="exterior-gallery section">
+  <div class="container">
+    <div class="ex-grid-2">
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+        <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+    </div>
+
+    <p class="ex-more">
+      Fler fantastiska verk finns på
+      <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">behance.net/pure-art</a>
+    </p>
+  </div>
+</section>
 
 
 
@@ -58,12 +72,25 @@
 
 
 
+<!-- footer -->
+<div id="footer"></div>
+
+<script>
+fetch("../components/footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
+</script>
 
 
 
 
 
 
+
+<script src="../js/main.js"></script>
 
 </body>
 </html>

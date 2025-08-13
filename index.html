@@ -9,21 +9,15 @@
 <body>
 
 
-
-  <!-- HEADER -->
-<header class="site-header">
-  <nav class="nav-center">
-    <div class="logo-wrapper">
-      <h2>Pure Art</h2>
-      <img src="assets/img/Logo-01.jpg" alt="Showcase render" loading="lazy" />
-    </div>
-    <div class="nav-links">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+<!-- Header -->
+<div id="header"></div>
+<script>
+fetch("../components/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 
 
 
@@ -82,9 +76,9 @@
       </a>
     </article>
     <article class="card">
-      <a href="pages/product-image.html">
+      <a href="pages/product.html">
         <img src="assets/img/Temp.JPG" alt="Project 03" />
-        <h3>Product Image</h3>
+        <h3>Product</h3>
       </a>
     </article>
     <article class="card">
@@ -94,7 +88,7 @@
       </a>
     </article>
     <article class="card">
-      <a href="pages/360-ar.html">
+      <a href="pages/360.html">
         <img src="assets/img/Temp.JPG" alt="Project 05" />
         <h3>360°-AR</h3>
       </a>
@@ -140,19 +134,16 @@
 
 
 
+<!-- footer -->
+<div id="footer"></div>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <p>
-      Do you have a product you want to visualize?  
-      I help you bring out exactly what you desire.  
-      I create product images, environment renders, films, and animations  
-      so you can present your product at its best.
-    </p>
-    <img src="assets/img/Logo-01.avif" alt="Pure Art Logo" />
-    <p class="copyright">&copy; 2025 Pure Art</p>
-  </div>
-</footer>
+<script>
+fetch("../components/footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
 
 
 

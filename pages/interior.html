@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>interior</title>
+ <link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+
+
+<!-- Header -->
+<div id="header"></div>
+<script>
+fetch("../components/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+
+
+<section class="exterior-hero section">
+  <div class="container">
+    <img src="../assets/img/interior-bar.jpg" alt="Exteriör">
+  </div>
+</section>
+
+<section class="exterior-text section">
+  <div class="container">
+    <div class="exterior-box">
+      <h2>Interior</h2>
+      <p>
+       Indoor environment images create inspiration and a feeling for the product. They also provide an
+        understanding of how the product appears in its proper context. It is possible to change the
+         colors of the room and the product to find the right mood that highlights the product in the best way.
+          If you have an environment, you can also use the environmental image from different camera
+           angles and create close-ups.
+      </p>
+      <p>Our mission is to deliver environmental images that inspire and highlight the product!</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="exterior-gallery section">
+  <div class="container">
+    <div class="ex-grid-2">
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+        <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+    </div>
+
+    <p class="ex-more">
+      Fler fantastiska verk finns på
+      <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">behance.net/pure-art</a>
+    </p>
+    <p>De flesta bilder relaterade till badrum designades för MacroDesign</p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- footer -->
+<div id="footer"></div>
+
+<script>
+fetch("../components/footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+
+
+
+
+
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
