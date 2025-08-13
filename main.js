@@ -1,18 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== استيراد الفوتر =====
-  fetch("../components/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.body.insertAdjacentHTML("beforeend", data);
-    })
-    .catch(err => console.error("Error loading footer:", err));
-
   // ===== منطق المودال =====
   const modal = document.getElementById('imgModal');
   const modalImg = document.getElementById('modalImg');
   const closeBtn = modal?.querySelector('.close');
   const body = document.body;
-  if (!modal || !modalImg || !closeBtn) return;
+
+  // لو ما فيه مودال، أوقف الكود
+  if (!modal || !modalImg || !closeBtn) {
+    return;
+  }
 
   document.addEventListener('click', (e) => {
     // لو الكليك على رابط ضمن الجاليري، خليه يفتح الصفحة عادي
