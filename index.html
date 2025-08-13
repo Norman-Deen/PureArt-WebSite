@@ -15,7 +15,7 @@
   <nav class="nav-center">
     <div class="logo-wrapper">
       <h2>Pure Art</h2>
-      <img src="assets/img/Logo-01.avif" alt="Showcase render" loading="lazy" />
+      <img src="assets/img/Logo-01.jpg" alt="Showcase render" loading="lazy" />
     </div>
     <div class="nav-links">
       <a href="#portfolio">Portfolio</a>
@@ -70,31 +70,44 @@
 <section id="work" class="section gallery">
   <div class="container grid-3">
     <article class="card">
-      <img src="assets/img/Temp.JPG" alt="Project 01" />
-      <h3>Bathroom 360°</h3>
+      <a href="pages/exterior.html">
+        <img src="assets/img/scandinavian-Ar01.jpg" alt="Project 01" />
+        <h3>Exterior</h3>
+      </a>
     </article>
     <article class="card">
-      <img src="assets/img/Temp.JPG" alt="Project 02" />
-      <h3>Architectural Viz</h3>
+      <a href="pages/interior.html">
+        <img src="assets/img/Temp.JPG" alt="Project 02" />
+        <h3>Interior</h3>
+      </a>
     </article>
     <article class="card">
-      <img src="assets/img/Temp.JPG" alt="Project 03" />
-      <h3>Product Animation</h3>
+      <a href="pages/product-image.html">
+        <img src="assets/img/Temp.JPG" alt="Project 03" />
+        <h3>Product Image</h3>
+      </a>
     </article>
     <article class="card">
-      <img src="assets/img/Temp.JPG" alt="Project 04" />
-      <h3>CGI Product</h3>
+      <a href="pages/film.html">
+        <img src="assets/img/Temp.JPG" alt="Project 04" />
+        <h3>Film</h3>
+      </a>
     </article>
     <article class="card">
-      <img src="assets/img/Temp.JPG" alt="Project 05" />
-      <h3>Motion Frames</h3>
+      <a href="pages/360-ar.html">
+        <img src="assets/img/Temp.JPG" alt="Project 05" />
+        <h3>360°-AR</h3>
+      </a>
     </article>
     <article class="card">
-      <img src="assets/img/Temp.JPG" alt="Project 06" />
-      <h3>Arch Interior</h3>
+      <a href="pages/other.html">
+        <img src="assets/img/Temp.JPG" alt="Project 06" />
+        <h3>Other</h3>
+      </a>
     </article>
   </div>
 </section>
+
 
 
 <!-- GALLERY mosaic -->
@@ -102,7 +115,7 @@
   <div class="container">
     <div class="mosaic-head">
       <h2>What we can do for you</h2>
-      <small>Double‑click to open image</small>
+      <small>click to open image</small>
     </div>
 
 <div class="mosaic">
@@ -118,6 +131,13 @@
 
   </div>
 </section>
+
+<!-- نافذة عرض الصورة -->
+<div id="imgModal" class="modal">
+  <button class="close" aria-label="Close">Close</button>
+  <img class="modal-content" id="modalImg" alt="">
+</div>
+
 
 
 
@@ -136,6 +156,7 @@
 
 
 
-  <script src="./main.js" defer></script>
+ <script src="./main.js" defer></script>
+
 </body>
 </html>
