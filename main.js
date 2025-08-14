@@ -1,17 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('imgModal');
+  const modal = document.getElementById('mediaModal');
   const modalImg = document.getElementById('modalImg');
-  const closeBtn = modal?.querySelector('.close');
+  const modalVideo = document.getElementById('modalVideo');
+  const closeBtn = modal.querySelector('.close');
   const body = document.body;
 
-  if (!modal || !modalImg || !closeBtn) return;
+  modalImg.style.display = 'none';
+  modalVideo.style.display = 'none';
 
-  // استخدام التفويض على document لالتقاط أي صورة حتى لو أضيفت لاحقاً
   document.addEventListener('click', (e) => {
     const img = e.target.closest('.mosaic img, .ex-grid-2 img');
-    if (!img) return;
+    const video = e.target.closest('.ex-grid-2 video');
 
-    modalImg.src = img.src;
+    if (!img && !video) return;
+
+    // إخفاء الاثنين أولاً
+    modalImg.style.display = 'none';
+    modalVideo.style.display = 'none';
+
+    if (img) {
+      modalImg.src = img.src;
+      modalImg.style.display = 'block';
+    } 
+else if (video) {
+  modalVideo.src = video.src;
+  modalVideo.style.display = 'block';
+  modalVideo.muted = true; // عشان يشتغل فوراً
+  modalVideo.play().then(() => {
+    modalVideo.muted = false; // فك الكتم بعد التشغيل
+  }).catch(err => {
+    console.warn("Autoplay blocked:", err);
+  });
+}
+
+
     modal.classList.add('open');
     body.classList.add('modal-open');
   });
@@ -19,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeModal = () => {
     modal.classList.remove('open');
     body.classList.remove('modal-open');
+    modalVideo.pause();
+    modalVideo.src = '';
   };
 
   closeBtn.addEventListener('click', closeModal);

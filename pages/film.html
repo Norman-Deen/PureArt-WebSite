@@ -24,7 +24,7 @@ fetch("../components/header.html")
 
 <section class="exterior-hero section">
   <div class="container">
-    <img src="../assets/img/interior-bar.jpg" alt="Exteriör">
+    <img src="../assets/img/film-bar.avif" alt="Exteriör">
   </div>
 </section>
 
@@ -44,26 +44,72 @@ fetch("../components/header.html")
 
 
 
+
 <section class="exterior-gallery section">
   <div class="container">
     <div class="ex-grid-2">
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-        <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
+
+
+
+
+
+<div class="video-card" style="width:100%; max-width:400px; text-align:center;">
+
+  <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
+    <video 
+      src="../assets/img/Ferrari458-Low.mp4" 
+      poster="../assets/img/Ferrari458-Low.jpg" 
+      style="width:100%; height:100%; object-fit:cover; display:block;">
+    </video>
+  </figure>
+  
+  <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
+    Super car
+  </p>
+
+
+</div>
+
+
+<div class="video-card" style="width:100%; max-width:400px; text-align:center;">
+
+  <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
+    <video 
+      src="../assets/img/ClassicBathroom.mp4" 
+      poster="../assets/img/ClassicBathroom.avif" 
+      style="width:100%; height:100%; object-fit:cover; display:block;">
+    </video>
+  </figure>
+  
+  <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
+    Classic Bathroom
+  </p>
+
+
+</div>
+
+
+
+
+<figure><img src="../assets/img/product-01.jpg" alt=""></figure>
+<figure><img src="../assets/img/product-02.jpg" alt=""></figure>
+
+
     </div>
 
-    <p class="ex-more">
-      Fler fantastiska verk finns på
-      <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">behance.net/pure-art</a>
-    </p>
-    <p>De flesta bilder relaterade till badrum designades för MacroDesign</p>
+<p class="ex-more">
+  More fantastic works can be found on
+  <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">
+    <img src="../assets/img/behance-1.svg" alt="Behance">
+ 
+   
+  </a>
+</p>
+
+
   </div>
 </section>
+
 
 
 
@@ -89,7 +135,21 @@ fetch("../components/footer.html")
 
 
 
-<script src="../js/main.js"></script>
+
+<!-- نافذة العرض -->
+<div id="mediaModal" class="modal">
+  <button class="close" aria-label="Close">Close</button>
+  <img class="modal-content" id="modalImg" />
+  <video class="modal-content" id="modalVideo" controls></video>
+</div>
+
+
+
+
+
+
+
+<script src="../main.js"></script>
 
 </body>
 </html>
