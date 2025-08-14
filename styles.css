@@ -524,6 +524,7 @@ body.modal-open{ overflow: hidden; }
   margin: 0 auto;
   padding: 0 1rem;
   box-sizing: border-box;
+  margin-bottom: 50px;
 }
 
 /* ===== Exterior page styles ===== */
@@ -535,48 +536,149 @@ body.modal-open{ overflow: hidden; }
   margin: 0 auto;
 }
 
-.exterior-text { padding-top: 20px; }
+.exterior-text {
+  padding-top: 20px;
+}
+
 .exterior-box {
   background: #e8f0ec;
   padding: 36px 28px;
   text-align: center;
 }
-.exterior-box h2 { font-size: 2.2rem; margin: 0 0 12px; color: #434343; }
-.exterior-box p { margin: 30px auto; max-width: 720px; line-height: 1.7; color: #5b5b5b; }
 
-.section { padding: 1rem 0; }
+.exterior-box h2 {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+  color: #434343;
+}
+
+.exterior-box p {
+  margin: 30px auto;
+  max-width: 720px;
+  line-height: 1.7;
+  color: #5b5b5b;
+}
+
+.section {
+  padding: 1rem 0;
+}
 
 /* خلي الخلفية الخضراء داخل عرض الـcontainer فقط */
-.exterior-gallery { background: transparent; padding: 40px 0; }
+.exterior-gallery {
+  background: transparent;
+  padding: 40px 0;
+}
+
 .exterior-gallery .container {
   background: #e8f0ec;
   padding: 28px;
+  max-width: 1090px;
 }
 
-
-.ex-grid-2 figure {
-  margin: 0;
-  overflow: hidden;       /* يخفي أي جزء خارج الإطار */
-  aspect-ratio: 4 / 3;    /* نسبة أبعاد موحّدة لكل الصور */
-}
-
-
-
+/* شبكة الصور */
 .ex-grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, 300px); /* عرض ثابت لكل عمود */
-  justify-content: center; /* يوسّط الأعمدة داخل الكونتينر */
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
 }
+
+.ex-grid-2 figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3; /* نسبة ثابتة */
+  cursor: pointer; /* شكل اليد */
+}
+
+/* تأثير الصورة والطبقة */
 .ex-grid-2 img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.ex-grid-2 figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.ex-grid-2 figure:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.ex-grid-2 figure:hover::after {
+  opacity: 1;
+}
+
+/* رابط المزيد */
+.ex-more {
+  text-align: center;
+  margin: 60px 0 0;
+  font-size: 1.5rem;
+
+  color: #696969;
+
 }
 
 
+.ex-more a {
+  font-weight: 600;
+  text-decoration: underline;
+}
 
-.ex-more { text-align: center; margin: 28px 0 0; font-size: 1rem; }
-.ex-more a { font-weight: 600; text-decoration: underline; }
+
+.ex-more img {
+  height: 70px;      /* ارتفاع الأيقونة */
+  width: auto;       /* يحافظ على النسبة */
+  vertical-align: middle; /* يخليها بنفس خط النص */
+  margin: 0 6px;     /* مسافة يمين ويسار */
+}
 
 /* ===== Exterior page styles End ===== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== close PopUp Win ===== */
+.close {
+  cursor: pointer;
+  background: #4f7cff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.close:hover {
+  background: #767676; /* لون عند التمرير */
+}
+/* ===== End ===== */
