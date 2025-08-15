@@ -24,7 +24,7 @@ fetch("../components/header.html")
 
 <section class="exterior-hero section">
   <div class="container">
-    <img src="../assets/img/exterior-bar.jpg" alt="Exteriör">
+    <img src="../assets/img/360-bar.avif" alt="Exteriör">
   </div>
 </section>
 
@@ -62,16 +62,46 @@ fetch("../components/header.html")
 
 <section class="exterior-gallery section">
   <div class="container">
+
+
+<div class="container">
+    
+<h2 style="margin:30px 20px 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">Click On pic to play</h2>
     <div class="ex-grid-2">
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-        <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-      <figure><img src="../assets/img/Temp.JPG" alt=""></figure>
-    </div>
+
+
+
+
+<div class="video-card" style="width:100%; max-width:400px; text-align:center;">
+  <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
+    <video 
+      src="../assets/video/Dush-360.mp4" 
+      poster="../assets/img/Dush-360.avif" 
+      style="width:100%; height:100%; object-fit:cover; display:block;">
+    </video>
+  </figure>
+  <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
+    Super car
+  </p>
+</div>
+
+
+<div class="video-card" style="width:100%; max-width:400px; text-align:center;">
+  <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
+    <video 
+      src="../assets/video/Kommod-360.mp4" 
+      poster="../assets/img/Kommod-360.avif" 
+      style="width:100%; height:100%; object-fit:cover; display:block;">
+    </video>
+  </figure>
+  <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
+    Classic Bathroom
+  </p>
+</div>
+
+
+
+</div>
 
 
     <div class="container hero-grid-vertical">
@@ -82,17 +112,24 @@ fetch("../components/header.html")
     </iframe>
   </figure>
   <div class="hero-content">
-    <h1>High-end 3D & Motion Design</h1>
-    <p>Product renders, animation, and immersive visuals.</p>
+    <h1>Interactive 3D Car Viewer</h1>
+    <p>Experience a real-time 3D car showcase built with Three.js, featuring animated doors, headlights, camera views, and color customization.
+This project demonstrates advanced WebGL techniques, creative coding, and UI integration — all running smoothly in the browser.
+Optimized for both desktop and mobile devices.</p>
   </div>
 
 
   
-    <p class="ex-more">
-      Fler fantastiska verk finns på
-      <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">behance.net/pure-art</a>
-    </p>
-  </div>
+<p class="ex-more">
+  More fantastic works can be found on
+  <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">
+    <img src="../assets/img/behance-1.svg" alt="Behance">
+   
+  </a>
+</p>
+
+
+
 </section>
 
 
@@ -116,11 +153,18 @@ fetch("../components/footer.html")
 
 
 
+<!-- نافذة العرض -->
+<div id="mediaModal" class="modal">
+  <button class="close" aria-label="Close">Close</button>
+  <img class="modal-content" id="modalImg" />
+  <video class="modal-content" id="modalVideo" controls></video>
+</div>
 
 
 
 
-<script src="../js/main.js"></script>
+
+<script src="../main.js"></script>
 
 </body>
 </html>
