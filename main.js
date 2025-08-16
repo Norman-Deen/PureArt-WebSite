@@ -248,9 +248,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // تأثير الإخفاء قبل تغيير الصورة
     randomImage.classList.add("fade-out");
-    setTimeout(() => {
-      randomImage.src = randomSrc;
-      randomImage.classList.remove("fade-out");
-    }, 500);
+setTimeout(() => {
+  randomImage.src = randomSrc.replace("assets/img/", "assets/img/thumb/").replace(".jpg", "-thumb.webp");
+  randomImage.dataset.full = randomSrc; // احفظ النسخة الكاملة
+  randomImage.classList.remove("fade-out");
+}, 500);
+
   }, 3000);
 });

@@ -1,3 +1,14 @@
+
+#header { min-height: 100px; }  /* على قد حجم الهيدر */
+#footer { min-height: 250px; }  /* على قد حجم الفوتر */
+
+
+
+
+
+
+
+
 /* === Make footer stick to bottom === */
 html,
 body {
@@ -390,6 +401,10 @@ img {
 }
 
 .mosaic-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* يخلي الصورة تملأ المربع */
+  aspect-ratio: 4 / 3; /* نسبة ثابتة للمكان قبل تحميل الصورة */
   transition: opacity 0.5s ease;
 }
 
