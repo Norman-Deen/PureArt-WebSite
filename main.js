@@ -1,56 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('mediaModal');
-  const modalImg = document.getElementById('modalImg');
-  const modalVideo = document.getElementById('modalVideo');
-  const closeBtn = modal.querySelector('.close');
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("mediaModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalVideo = document.getElementById("modalVideo");
+  const closeBtn = modal.querySelector(".close");
   const body = document.body;
 
-  modalImg.style.display = 'none';
-  modalVideo.style.display = 'none';
+  modalImg.style.display = "none";
+  modalVideo.style.display = "none";
 
-  document.addEventListener('click', (e) => {
-    const img = e.target.closest('.mosaic img, .ex-grid-2 img');
-    const video = e.target.closest('.ex-grid-2 video');
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".mosaic img, .ex-grid-2 img");
+    const video = e.target.closest(".ex-grid-2 video");
 
     if (!img && !video) return;
 
     // إخفاء الاثنين أولاً
-    modalImg.style.display = 'none';
-    modalVideo.style.display = 'none';
+    modalImg.style.display = "none";
+    modalVideo.style.display = "none";
 
-    if (img) {
-      modalImg.src = img.src;
-      modalImg.style.display = 'block';
-    } 
-else if (video) {
-  modalVideo.src = video.src;
-  modalVideo.style.display = 'block';
-  modalVideo.muted = true; // عشان يشتغل فوراً
-  modalVideo.play().then(() => {
-    modalVideo.muted = false; // فك الكتم بعد التشغيل
-  }).catch(err => {
-    console.warn("Autoplay blocked:", err);
-  });
+if (img) {
+  modalImg.src = img.dataset.full || img.src; // 👍 لو في data-full يستعملها
+  modalImg.style.display = "block";
 }
 
 
-    modal.classList.add('open');
-    body.classList.add('modal-open');
+ else if (video) {
+      modalVideo.src = video.src;
+      modalVideo.style.display = "block";
+      modalVideo.muted = true; // عشان يشتغل فوراً
+      modalVideo
+        .play()
+        .then(() => {
+          modalVideo.muted = false; // فك الكتم بعد التشغيل
+        })
+        .catch((err) => {
+          console.warn("Autoplay blocked:", err);
+        });
+    }
+
+    modal.classList.add("open");
+    body.classList.add("modal-open");
   });
 
   const closeModal = () => {
-    modal.classList.remove('open');
-    body.classList.remove('modal-open');
+    modal.classList.remove("open");
+    body.classList.remove("modal-open");
     modalVideo.pause();
-    modalVideo.src = '';
+    modalVideo.src = "";
   };
 
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
   });
 });
 
@@ -58,10 +62,11 @@ else if (video) {
 
 
 
-//GALLERY mosaic 
-document.addEventListener('DOMContentLoaded', () => {
+
+//GALLERY mosaic
+document.addEventListener("DOMContentLoaded", () => {
   const imageList = [
-      "assets/img/Temp.JPG",
+    "assets/img/Temp.JPG",
     "assets/img/Studio-light-30-Cam-05.jpg",
     "assets/img/Spirit-Vik.jpg",
     "assets/img/Spirit-U-B.jpg",
@@ -230,22 +235,22 @@ document.addEventListener('DOMContentLoaded', () => {
     "assets/img/Badrum-24-Animation.jpg",
     "assets/img/Animation-women-shadow.jpg",
     "assets/img/360-bar.jpg",
-    "assets/img/360.jpg"
+    "assets/img/360.jpg",
   ];
 
-const mosaicImages = document.querySelectorAll('.mosaic-grid img');
+  const mosaicImages = document.querySelectorAll(".mosaic-grid img");
 
-setInterval(() => {
-  // اختر صورة عشوائية من الشبكة
-  const randomImage = mosaicImages[Math.floor(Math.random() * mosaicImages.length)];
-  const randomSrc = imageList[Math.floor(Math.random() * imageList.length)];
+  setInterval(() => {
+    // اختر صورة عشوائية من الشبكة
+    const randomImage =
+      mosaicImages[Math.floor(Math.random() * mosaicImages.length)];
+    const randomSrc = imageList[Math.floor(Math.random() * imageList.length)];
 
-  // تأثير الإخفاء قبل تغيير الصورة
-  randomImage.classList.add('fade-out');
-  setTimeout(() => {
-    randomImage.src = randomSrc;
-    randomImage.classList.remove('fade-out');
-  }, 500);
-
-}, 3000);
+    // تأثير الإخفاء قبل تغيير الصورة
+    randomImage.classList.add("fade-out");
+    setTimeout(() => {
+      randomImage.src = randomSrc;
+      randomImage.classList.remove("fade-out");
+    }, 500);
+  }, 3000);
 });

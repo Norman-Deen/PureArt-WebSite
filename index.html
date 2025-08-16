@@ -1,130 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pure Art</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pure Art</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header"></div>
+    <script>
+      fetch("./components/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
 
+    <!-- HERO 1 -->
+    <section class="hero section">
+      <div class="container hero-grid-vertical">
+        <figure class="hero-media">
+          <video
+            src="assets/video/Ferrari458-LowFast.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </figure>
+        <div class="hero-content">
+          <h1>High-end 3D & Motion Design</h1>
+          <p>Product renders, animation, and immersive visuals.</p>
+        </div>
+      </div>
 
-<!-- Header -->
-<div id="header"></div>
-<script>
-fetch("./components/header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
-</script>
+      <div class="container hero-grid-vertical">
+        <figure class="hero-media">
+          <iframe
+            src="https://norman-deen.github.io/CarJsShowcase/"
+            loading="lazy"
+          >
+          </iframe>
+        </figure>
+        <div class="hero-content">
+          <h1>3D Car</h1>
+          <p>
+            Experience this fully interactive 3D car viewer built with modern
+            web technologies like Three.js. Open doors, switch camera views, and
+            try out different body colors – all in real-time! This is a
+            non-commercial demo created to demonstrate 3D programming and
+            visualization skills. The car model was modified and adapted for
+            compatibility. No official branding is used.
+          </p>
 
-
-
-
-<!-- HERO 1 -->
-<section class="hero section">
-  <div class="container hero-grid-vertical">
-    <figure class="hero-media">
-     <video src="assets/video/Ferrari458-LowFast.mp4" autoplay muted loop playsinline></video>
-
-
-    </figure>
-    <div class="hero-content">
-      <h1>High-end 3D & Motion Design</h1>
-      <p>Product renders, animation, and immersive visuals.</p>
-    </div>
-  </div>
-
-<div class="container hero-grid-vertical">
-  <figure class="hero-media">
-    <iframe 
-      src="https://norman-deen.github.io/CarJsShowcase/" 
-      loading="lazy">
-    </iframe>
-  </figure>
-  <div class="hero-content">
-    <h1>3D Car</h1>
-    <p>Experience this fully interactive 3D car viewer built with modern web technologies like Three.js.
-Open doors, switch camera views, and try out different body colors – all in real-time!
-
- This is a non-commercial demo created to demonstrate 3D programming and visualization skills.
-The car model was modified and adapted for compatibility. No official branding is used.</p>
-
-<a href="https://norman-deen.github.io/CarJsShowcase/" target="_blank" rel="noopener noreferrer">
-  <h3>Click to Open Car3D</h3>
-</a>
-
-
-  </div>
-</div>
-
-
-
-
-</section>
-
-
-
-
-
-
+          <a
+            href="https://norman-deen.github.io/CarJsShowcase/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3>Click to Open Car3D</h3>
+          </a>
+        </div>
+      </div>
+    </section>
 
 <!-- GALLERY -->
 <section id="gallery" class="section gallery">
   <div class="container gallery">
 
     <article class="card gallery">
-      <a href="pages/exterior.html">
-        <div class="img-wrap">
-          <img src="assets/img/Exterior-01.jpg" alt="Project 01" />
-        </div>
-      </a>
+      <a href="pages/exterior.html"><div class="img-wrap"><img src="assets/img/thumb/Exterior-01-thumb.webp" alt="Project 01"></div></a>
       <h3>Exterior</h3>
     </article>
 
     <article class="card gallery">
-      <a href="pages/interior.html">
-        <div class="img-wrap">
-          <img src="assets/img/Interior.jpg" alt="Project 02" />
-        </div>
-      </a>
+      <a href="pages/interior.html"><div class="img-wrap"><img src="assets/img/thumb/interior-04-thumb.webp" alt="Project 02"></div></a>
       <h3>Interior</h3>
     </article>
 
     <article class="card gallery">
-      <a href="pages/product.html">
-        <div class="img-wrap">
-          <img src="assets/img/Product.jpg" alt="Project 03" />
-        </div>
-      </a>
+      <a href="pages/product.html"><div class="img-wrap"><img src="assets/img/thumb/product-thumb.webp" alt="Project 03"></div></a>
       <h3>Product</h3>
     </article>
 
     <article class="card gallery">
-      <a href="pages/film.html">
-        <div class="img-wrap">
-          <img src="assets/img/film.jpg" alt="Project 04" />
-        </div>
-      </a>
+      <a href="pages/film.html"><div class="img-wrap"><img src="assets/img/thumb/film-thumb.webp" alt="Project 04"></div></a>
       <h3>Film</h3>
     </article>
 
     <article class="card gallery">
-      <a href="pages/360.html">
-        <div class="img-wrap">
-          <img src="assets/img/360.jpg" alt="Project 05" />
-        </div>
-      </a>
+      <a href="pages/360.html"><div class="img-wrap"><img src="assets/img/thumb/360-thumb.webp" alt="Project 05"></div></a>
       <h3>360°-AR</h3>
     </article>
 
     <article class="card gallery">
-      <a href="pages/other.html">
-        <div class="img-wrap">
-          <img src="assets/img/other.jpg" alt="Project 06" />
-        </div>
-      </a>
+      <a href="pages/other.html"><div class="img-wrap"><img src="assets/img/thumb/other-15-thumb.webp" alt="Project 06"></div></a>
       <h3>Other</h3>
     </article>
 
@@ -132,64 +103,61 @@ The car model was modified and adapted for compatibility. No official branding i
 </section>
 
 
+    <!-- GALLERY mosaic -->
+    <section class="section mosaic">
+      <div class="container">
+        <div class="mosaic-head">
+          <h2>What we can do for you</h2>
+          <small>click to open image</small>
+        </div>
 
+        <div class="mosaic-grid">
+          <figure class="tile big">
+            <img src="assets/img/Exterior-07.jpg" alt="" />
+          </figure>
+          <figure class="tile tall">
+            <img src="assets/img/product-34.jpg" alt="" />
+          </figure>
+          <figure class="tile">
+            <img src="assets/img/product-02.jpg" alt="" />
+          </figure>
+          <figure class="tile wide">
+            <img src="assets/img/other-11.jpg" alt="" />
+          </figure>
+          <figure class="tile">
+            <img src="assets/img/other-08.jpg" alt="" />
+          </figure>
+          <figure class="tile big">
+            <img src="assets/img/other-12.jpg" alt="" />
+          </figure>
+          <figure class="tile tall">
+            <img src="assets/img/other-15.jpg" alt="" />
+          </figure>
+          <figure class="tile wide">
+            <img src="assets/img/interior-23.jpg" alt="" />
+          </figure>
+        </div>
+      </div>
+    </section>
 
-
-<!-- GALLERY mosaic -->
-<section class="section mosaic">
-  <div class="container">
-    <div class="mosaic-head">
-      <h2>What we can do for you</h2>
-      <small>click to open image</small>
+    <!-- نافذة العرض -->
+    <div id="mediaModal" class="modal">
+      <button class="close" aria-label="Close">Close</button>
+      <img class="modal-content" id="modalImg" />
+      <video class="modal-content" id="modalVideo" controls></video>
     </div>
 
-    <div class="mosaic-grid">
-      <figure class="tile big"><img src="assets/img/Exterior-07.jpg" alt=""></figure>
-      <figure class="tile tall"><img src="assets/img/product-34.jpg" alt=""></figure>
-      <figure class="tile"><img src="assets/img/product-02.jpg" alt=""></figure>
-      <figure class="tile wide"><img src="assets/img/other-11.jpg" alt=""></figure>
-      <figure class="tile"><img src="assets/img/other-08.jpg" alt=""></figure>
-      <figure class="tile big"><img src="assets/img/other-12.jpg" alt=""></figure>
-      <figure class="tile tall"><img src="assets/img/other-15.jpg" alt=""></figure>
-      <figure class="tile wide"><img src="assets/img/interior-23.jpg" alt=""></figure>
-    </div>
+    <!-- footer -->
+    <div id="footer"></div>
 
-  </div>
-</section>
+    <script>
+      fetch("./components/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
 
-
-
-
-
-
-<!-- نافذة العرض -->
-<div id="mediaModal" class="modal">
-  <button class="close" aria-label="Close">Close</button>
-  <img class="modal-content" id="modalImg" />
-  <video class="modal-content" id="modalVideo" controls></video>
-</div>
-
-
-
-
-
-<!-- footer -->
-<div id="footer"></div>
-
-<script>
-fetch("./components/footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-
-</script>
-
-
-
-
-
- <script src="./main.js" defer></script>
-
-</body>
+    <script src="./main.js" defer></script>
+  </body>
 </html>
