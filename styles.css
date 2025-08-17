@@ -101,12 +101,29 @@ main { flex: 1; }
 }
 
 /* شعار الموقع */
-.logo-wrapper { display: flex; align-items: center; gap: 20px; }
-.logo-wrapper a { text-decoration: none; color: inherit; }
-.logo-wrapper img { height: 70px; display: block; }
-.logo-wrapper h2 {
-  margin: 0; font-size: 2rem; font-weight: bold; color: var(--text-main);
+.logo-wrapper { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px;           /* 👈 صغّرنا المسافة بين الصورة والنص */
 }
+
+.logo-wrapper a { 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.logo-wrapper img { 
+  height: 50px;        /* 👈 كان 70px → صغّرناه */
+  display: block; 
+}
+
+.logo-wrapper h2 {
+  margin: 0; 
+  font-size: 1.4rem;   /* 👈 كان 2rem → أصغر */
+  font-weight: bold; 
+  color: var(--text-main);
+}
+
 
 /* روابط القائمة */
 .nav-links {
@@ -181,21 +198,72 @@ main { flex: 1; }
 /* =========================
    HERO SECTION (البداية)
 ========================= */
-.hero.section { padding: 0; }
+.hero.section { 
+  padding: 0; 
+}
+
 .hero-grid-vertical {
-  display: flex; flex-direction: column; align-items: center;
-  text-align: center; gap: 0;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  text-align: center; 
+  gap: 1rem; /* خلي في مسافة بسيطة بدل 0 */
 }
-.hero-media { width: 100%; display: flex; justify-content: center; }
-.hero-media video, .hero-media iframe {
-  width: 100%; max-width: 1000px; border: none; display: block;
+
+.hero-media { 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 100px;
 }
-.hero-media iframe { height: 800px; margin-top: 60px; }
-.hero-content h1 { font-size: 2rem; font-weight: bold; color: var(--text-main); }
-.hero-content p { font-size: 1rem; color: var(--text-p); max-width: 700px; margin: 0; }
-.hero-content h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1rem; color: var(--text-link); }
-.hero-content a { text-decoration: none; }
-.hero-content a:hover h3 { color: var(--text-hover); }
+
+
+
+.hero-media video,
+.hero-media iframe {
+  width: 100%; 
+  max-width: 1000px; 
+  height: auto;       /* ✅ يتأقلم مع العرض */
+  border: none; 
+  display: block;
+}
+
+/* iframe desktop */
+.hero-media iframe { 
+  height: 720px;      /* ✅ بدل 800px */
+  margin-top: 20px;   /* ✅ أقل من 60px */
+}
+
+
+.hero-content h1 { 
+  font-size: 2rem; 
+  font-weight: bold; 
+  color: var(--text-main); 
+  margin-top: 1rem;   /* ✅ مسافة واضحة فوق العنوان */
+}
+
+.hero-content p { 
+  font-size: 1rem; 
+  color: var(--text-p); 
+  max-width: 700px; 
+  margin: 0.5rem auto; /* ✅ مسافة وسطية للفقرات */
+}
+
+.hero-content h3 { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  margin-top: 1rem; 
+  color: var(--text-link); 
+}
+
+.hero-content a { 
+  text-decoration: none; 
+}
+
+.hero-content a:hover h3 { 
+  color: var(--text-hover); 
+}
+
 
 /* =========================
    GALLERY SECTION (المعرض)
@@ -337,3 +405,97 @@ body.modal-open { overflow: hidden; }
 }
 .ex-more a { font-weight: 600; text-decoration: underline; color: var(--text-link); }
 .ex-more img { height: 70px; vertical-align: middle; margin: 0 6px; }
+
+
+
+
+
+
+
+
+
+
+
+/* 📱 Mobile responsive */
+@media (max-width: 739px) {
+
+  .logo-wrapper {
+    margin-top: 20px;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center; /* 👈 يخليهم بالنص */
+    gap: 40px;               /* 👈 قللنا المسافة شوي لتناسب الموبايل */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links > * {
+    display: inline-block;
+  }
+
+  /* خففنا البادينغ للسيكشن بالموبايل */
+  .section { 
+    padding: 1.5rem 0; 
+  }
+
+  .site-header {
+    margin-top: 0;
+    padding: 10px 20px;
+  }
+
+  .hero-media iframe {
+    width: 100% !important;
+    height: 50vh !important; /* نص ارتفاع الشاشة */
+    margin-top: 20px;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .hero-media {
+    margin-top: 40px;
+    padding: 0 !important;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section.gallery .container.gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ex-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* ✅ العناوين */
+  h1, .hero-content h1 { font-size: 1rem !important; }
+  h2, .hero-content h2 { font-size: 1.1rem !important; }
+  h3, .hero-content h3 { font-size: 1rem !important; }
+
+  /* ✅ الفقرات */
+  p, .site-footer p, .hero-content p, .exterior-box p {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  /* ✅ نصوص المعرض */
+  .section.gallery .card.gallery h3 {
+    font-size: 1rem !important;
+  }
+
+  /* ✅ نصوص الفوتر */
+  .site-footer .copyright {
+    font-size: 0.75rem !important;
+  }
+}
