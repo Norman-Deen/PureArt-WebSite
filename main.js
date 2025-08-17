@@ -238,21 +238,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/img/360.jpg",
   ];
 
-  const mosaicImages = document.querySelectorAll(".mosaic-grid img");
+const mosaicImages = document.querySelectorAll(".mosaic-grid img");
 
+if (mosaicImages.length > 0) {
   setInterval(() => {
-    // اختر صورة عشوائية من الشبكة
     const randomImage =
       mosaicImages[Math.floor(Math.random() * mosaicImages.length)];
     const randomSrc = imageList[Math.floor(Math.random() * imageList.length)];
 
-    // تأثير الإخفاء قبل تغيير الصورة
     randomImage.classList.add("fade-out");
-setTimeout(() => {
-  randomImage.src = randomSrc.replace("assets/img/", "assets/img/thumb/").replace(".jpg", "-thumb.webp");
-  randomImage.dataset.full = randomSrc; // احفظ النسخة الكاملة
-  randomImage.classList.remove("fade-out");
-}, 500);
-
+    setTimeout(() => {
+      randomImage.src = randomSrc
+        .replace("assets/img/", "assets/img/thumb/")
+        .replace(".jpg", "-thumb.webp");
+      randomImage.dataset.full = randomSrc;
+      randomImage.classList.remove("fade-out");
+    }, 500);
   }, 2000);
-});
+}});

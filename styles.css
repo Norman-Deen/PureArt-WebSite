@@ -329,16 +329,43 @@ main { flex: 1; }
    MODAL (النوافذ المنبثقة)
 ========================= */
 .modal {
-  position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,.88);
-  display: none; align-items: center; justify-content: center; padding: 20px;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,.88);
+  display: none; /* مخفي بالبداية */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
-.modal.open { display: flex; flex-direction: column-reverse; gap: 12px; }
-.modal-content { max-width: 90vw; max-height: 80vh; object-fit: contain; border-radius: 12px; }
+
+.modal.open {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .modal .close {
-  align-self: center; padding: 10px 18px; border: 0;
-  border-radius: 999px; background: var(--bg-light); color: var(--text-dark);
+  align-self: center;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
-body.modal-open { overflow: hidden; }
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
 
 /* =========================
    FILM PAGE (صفحة الفيديو)
@@ -492,6 +519,7 @@ body.modal-open { overflow: hidden; }
     grid-template-columns: repeat(2, 1fr);
   }
 
+
   .ex-grid-2 {
     grid-template-columns: 1fr;
   }
@@ -596,6 +624,19 @@ body.modal-open { overflow: hidden; }
 .tile.big {
   grid-row: span 1;      /* ✅ خليها ارتفاع عادي بالموبايل */
 }
+
+
+
+/* خلي الصور ترجع تبين بسلاسة */
+.mosaic-grid img {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+
+
+
+
 /* GALLERY mosaic End */
 
 
