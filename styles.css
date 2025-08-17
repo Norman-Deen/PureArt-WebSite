@@ -498,4 +498,151 @@ body.modal-open { overflow: hidden; }
   .site-footer .copyright {
     font-size: 0.75rem !important;
   }
+
+
+  /* GALLERY */
+ .section.gallery .container.gallery {
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 15px;
+  }
+
+   .section.gallery {
+    padding: 40px 10px; /* ✅ فوق/تحت 40px، يمين/يسار 10px */
+  }
+
+  .section.gallery .card.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .section.gallery .card.gallery .img-wrap {
+    width: 100%;
+    height: 160px;   /* ✅ نفس الارتفاع لكل الصور */
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .section.gallery .card.gallery .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✅ يملأ الصندوق ويقص الزائد */
+    display: block;
+  }
+
+  .section.gallery .card.gallery h3 {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+
+
+ /* GALLERY mosaic */
+.section.mosaic {
+    margin: 10px 0;        /* قلل الهوامش */
+    padding: 10px;         /* أضف مسافة داخلية */
+  }
+
+  .mosaic-head {
+    flex-direction: column;
+    gap: 0.1rem;
+    text-align: center;
+  }
+
+  .mosaic-head small {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .mosaic-grid {
+    grid-template-columns: repeat(2, 1fr); /* عمودين بدل 6 */
+    grid-auto-rows: 80px;                 /* خفف الطول */
+    gap: 6px;
+  }
+
+  /* عدل أحجام البلوكات الكبيرة */
+  .tile.wide,
+  .tile.big {
+    grid-column: span 2;   /* تاخد عرض الشبكة */
+  }
+
+  .tile.tall,
+  .tile.big {
+    grid-row: span 1;      /* ✅ خليها ارتفاع عادي بالموبايل */
+  }
+
+
+  /* Footer  */
+   .site-footer {
+    padding: 15px 15px; /* قلل البادينغ */
+  }
+
+  .site-footer p {
+    font-size: 0.9rem;   /* خط أصغر */
+    line-height: 1.4;    /* تباعد أقل */
+    margin-bottom: 15px; /* فراغ أقل */
+  }
+
+  .site-footer img {
+    height: 60px;        /* صورة اللوجو أصغر */
+    margin: 15px auto;
+  }
+
+  .site-footer .copyright {
+    font-size: 0.75rem;  /* خط أصغر */
+    margin-top: 10px;
+  }
+
+
+
+   /* exterior  */
+
+ .exterior-hero img {
+    height: 100px;        /* ✅ أصغر للموبايل */
+    border-radius: 0;
+  }
+
+  .exterior-box {
+    padding: 20px 15px;   /* ✅ قلل الحشوات */
+  }
+
+  .exterior-box h2 {
+    font-size: 1.4rem;    /* ✅ أصغر من 2.2rem */
+    margin-bottom: 10px;
+  }
+
+  .exterior-box p {
+    font-size: 0.9rem;    /* ✅ خط أصغر */
+    margin: 15px auto;
+    line-height: 1.5;
+  }
+
+  .exterior-gallery {
+    padding: 20px 0;      /* ✅ قلل المسافة */
+  }
+
+  .exterior-gallery .container {
+    padding: 15px;        /* ✅ قلل الحشوات الداخلية */
+  }
+
+  .ex-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ عمود واحد بالموبايل */
+    gap: 12px;
+  }
+
+  .ex-more {
+    margin: 30px 0 0;
+    font-size: 1rem;      /* ✅ خط أصغر */
+  }
+
+  .ex-more img {
+    height: 40px;         /* ✅ صورة أصغر */
+    margin: 0 4px;
+  }
+
+
 }
