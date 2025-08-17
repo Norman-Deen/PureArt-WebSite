@@ -39,7 +39,7 @@ p {
 
 /* Layout */
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -308,7 +308,6 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-section);
   padding: 36px 28px;
   text-align: center;
-  border-radius: 8px;
 }
 
 .exterior-box h2 {
@@ -411,3 +410,113 @@ body.modal-open { overflow: hidden; }
   color: var(--text-main);
 }
 
+
+
+/* =========================
+   EXTERIOR PAGE (Fixed)
+========================= */
+.exterior-hero img {
+  width: 100%;
+  height: 250px;          /* رجعناها مثل القديم */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0;       /* شيل الزوايا */
+}
+
+.exterior-text {
+  padding-top: 20px;
+}
+
+.exterior-box {
+  background: var(--bg-section);
+  padding: 36px 28px;
+  text-align: center;
+  border-radius: 0;       /* بدون تدوير */
+}
+
+.exterior-box h2 {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+  color: var(--text-main);
+}
+
+.exterior-box p {
+  margin: 30px auto;
+  max-width: 720px;
+  line-height: 1.7;
+  color: var(--text-p);
+}
+
+.exterior-gallery {
+  background: transparent;
+  padding: 40px 0;
+}
+
+.exterior-gallery .container {
+  background: var(--bg-section);
+  padding: 28px;
+  max-width: 1090px;
+}
+
+.ex-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.ex-grid-2 figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.ex-grid-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.ex-grid-2 figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.ex-grid-2 figure:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.ex-grid-2 figure:hover::after {
+  opacity: 1;
+}
+
+.ex-more {
+  text-align: center;
+  margin: 60px 0 0;
+  font-size: 1.5rem;
+  color: var(--text-soft);
+}
+
+.ex-more a {
+  font-weight: 600;
+  text-decoration: underline;
+  color: var(--text-link);
+}
+
+.ex-more img {
+  height: 70px;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 6px;
+}
