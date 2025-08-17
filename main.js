@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("mediaModal");
+  if (!modal) return; // 👈 وقف الكود إذا مافي مودال بهالصفحة
+
   const modalImg = document.getElementById("modalImg");
   const modalVideo = document.getElementById("modalVideo");
   const closeBtn = modal.querySelector(".close");
@@ -11,31 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (e) => {
     const img = e.target.closest(".mosaic img, .ex-grid-2 img");
     const video = e.target.closest(".ex-grid-2 video");
-
     if (!img && !video) return;
 
     // إخفاء الاثنين أولاً
     modalImg.style.display = "none";
     modalVideo.style.display = "none";
 
-if (img) {
-  modalImg.src = img.dataset.full || img.src; // 👍 لو في data-full يستعملها
-  modalImg.style.display = "block";
-}
-
-
- else if (video) {
+    if (img) {
+      modalImg.src = img.dataset.full || img.src;
+      modalImg.style.display = "block";
+    } else if (video) {
       modalVideo.src = video.src;
       modalVideo.style.display = "block";
-      modalVideo.muted = true; // عشان يشتغل فوراً
-      modalVideo
-        .play()
-        .then(() => {
-          modalVideo.muted = false; // فك الكتم بعد التشغيل
-        })
-        .catch((err) => {
-          console.warn("Autoplay blocked:", err);
-        });
+      modalVideo.muted = true;
+      modalVideo.play().then(() => {
+        modalVideo.muted = false;
+      }).catch((err) => {
+        console.warn("Autoplay blocked:", err);
+      });
     }
 
     modal.classList.add("open");
