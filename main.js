@@ -254,5 +254,5 @@ setTimeout(() => {
   randomImage.classList.remove("fade-out");
 }, 500);
 
-  }, 3000);
+  }, 2000);
 });
