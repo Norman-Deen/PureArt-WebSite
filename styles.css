@@ -384,6 +384,17 @@ body.modal-open { overflow: hidden; }
 .exterior-gallery .container {
   background: var(--bg-section); padding: 28px; max-width: 1090px;
 }
+.exterior-gallery h3 {
+  text-align: center;   /* ✅ يخلي العنوان بالنص */
+  margin-bottom: 12px;  /* مسافة صغيرة تحت */
+}
+
+.exterior-gallery p {
+  text-align: center;   /* ✅ يخلي الفقرات بالنص */
+  max-width: 700px;     /* تحديد عرض مناسب */
+  margin: 0 auto 15px;  /* وسّطها وحدد مسافة تحت */
+  line-height: 1.6;
+}
 .ex-grid-2 figure {
   position: relative; margin: 0; overflow: hidden;
   aspect-ratio: 4 / 3; cursor: pointer;
@@ -419,6 +430,8 @@ body.modal-open { overflow: hidden; }
 /* 📱 Mobile responsive */
 @media (max-width: 739px) {
 
+
+
   .logo-wrapper {
     margin-top: 20px;
   }
@@ -450,7 +463,7 @@ body.modal-open { overflow: hidden; }
 
   .hero-media iframe {
     width: 100% !important;
-    height: 50vh !important; /* نص ارتفاع الشاشة */
+    height: 80vh !important; /* نص ارتفاع الشاشة */
     margin-top: 20px;
     padding: 0 !important;
     display: block !important;
@@ -461,6 +474,11 @@ body.modal-open { overflow: hidden; }
     padding: 0 !important;
   }
 
+ .hero-grid-vertical {
+    gap: 0.1rem;          /* 👈 قلل المسافة بين العناصر */
+    padding: 0 10px;      /* 👈 أضف شوية مسافة يمين/يسار */
+  }
+  
   .nav-center {
     flex-direction: column;
     gap: 20px;
@@ -508,6 +526,7 @@ body.modal-open { overflow: hidden; }
 
    .section.gallery {
     padding: 40px 10px; /* ✅ فوق/تحت 40px، يمين/يسار 10px */
+    margin-top: 20px;
   }
 
   .section.gallery .card.gallery {
@@ -537,42 +556,47 @@ body.modal-open { overflow: hidden; }
     margin-top: 10px;
     text-align: center;
   }
+/* GALLERY End */
 
 
-
- /* GALLERY mosaic */
+/* GALLERY mosaic */
 .section.mosaic {
-    margin: 10px 0;        /* قلل الهوامش */
-    padding: 10px;         /* أضف مسافة داخلية */
-  }
+  margin: 10px 0;        /* قلل الهوامش */
+  padding: 10px;         /* أضف مسافة داخلية */
+}
 
-  .mosaic-head {
-    flex-direction: column;
-    gap: 0.1rem;
-    text-align: center;
-  }
+.mosaic-head {
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: center;
+}
 
-  .mosaic-head small {
-    margin: 0;
-    font-size: 0.85rem;
-  }
+.mosaic-head h2 {
+  margin: 0 0 1px;   /* 👈 قلل المسافة بين العنوان والسطر التاني */
+}
 
-  .mosaic-grid {
-    grid-template-columns: repeat(2, 1fr); /* عمودين بدل 6 */
-    grid-auto-rows: 80px;                 /* خفف الطول */
-    gap: 6px;
-  }
+.mosaic-head small {
+  margin: 0;
+  font-size: 0.85rem;
+}
 
-  /* عدل أحجام البلوكات الكبيرة */
-  .tile.wide,
-  .tile.big {
-    grid-column: span 2;   /* تاخد عرض الشبكة */
-  }
+.mosaic-grid {
+  grid-template-columns: repeat(2, 1fr); /* عمودين بدل 6 */
+  grid-auto-rows: 80px;                 /* خفف الطول */
+  gap: 6px;
+}
 
-  .tile.tall,
-  .tile.big {
-    grid-row: span 1;      /* ✅ خليها ارتفاع عادي بالموبايل */
-  }
+/* عدل أحجام البلوكات الكبيرة */
+.tile.wide,
+.tile.big {
+  grid-column: span 2;   /* تاخد عرض الشبكة */
+}
+
+.tile.tall,
+.tile.big {
+  grid-row: span 1;      /* ✅ خليها ارتفاع عادي بالموبايل */
+}
+/* GALLERY mosaic End */
 
 
   /* Footer  */
@@ -595,11 +619,10 @@ body.modal-open { overflow: hidden; }
     font-size: 0.75rem;  /* خط أصغر */
     margin-top: 10px;
   }
-
+/* Footer End  */
 
 
    /* exterior  */
-
  .exterior-hero img {
     height: 100px;        /* ✅ أصغر للموبايل */
     border-radius: 0;
@@ -614,18 +637,20 @@ body.modal-open { overflow: hidden; }
     margin-bottom: 10px;
   }
 
-  .exterior-box p {
-    font-size: 0.9rem;    /* ✅ خط أصغر */
-    margin: 15px auto;
-    line-height: 1.5;
-  }
+.exterior-box p {
+  margin: 4px 0;        /* ✅ مسافة صغيرة بس */
+  line-height: 1.4;     
+}
+
 
   .exterior-gallery {
     padding: 20px 0;      /* ✅ قلل المسافة */
   }
 
   .exterior-gallery .container {
-    padding: 15px;        /* ✅ قلل الحشوات الداخلية */
+
+    padding: 5px;        /* ✅ قلل الحشوات الداخلية */
+    
   }
 
   .ex-grid-2 {
@@ -643,6 +668,61 @@ body.modal-open { overflow: hidden; }
     height: 40px;         /* ✅ صورة أصغر */
     margin: 0 4px;
   }
+   /* exterior End */
+
+
+/* Car Viewer */
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 1.3rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.hero-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 12px;  /* 👈 مسافة صغيرة تحت الفقرة */
+}
+
+/* الزر */
+.hero-content .btn-car {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--text-link);   /* نفس لون الروابط */
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-content .btn-car:hover {
+  background: var(--text-hover); /* يتغير عند التمرير */
+  color: #fff;
+}
+/* Car Viewer End */
+
+
+
+  .ex-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ عمودين */
+    gap: 10px;
+  }
+
+  .ex-grid-2 img {
+    width: 100%;          /* ✅ كل صورة تاخد عرض العمود */
+    height: auto;         /* ✅ ارتفاع يتأقلم */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
 
 
 }
