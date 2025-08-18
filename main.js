@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //GALLERY mosaic
 document.addEventListener("DOMContentLoaded", () => {
 const imageList = [
-  "assets/img/temp.jpg",
+  
   "assets/img/studio-light-30-cam-05.jpg",
   "assets/img/spirit-vik.jpg",
   "assets/img/spirit-u-b.jpg",
@@ -169,7 +169,7 @@ const imageList = [
   "assets/img/other-01.jpg",
   "assets/img/other.jpg",
   "assets/img/music-symbol.jpg",
-  "assets/img/logo-01.jpg",
+
   "assets/img/kommod-360.jpg",
   "assets/img/interior-bar.jpg",
   "assets/img/interior-35.jpg",

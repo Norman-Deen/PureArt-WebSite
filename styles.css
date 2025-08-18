@@ -195,6 +195,10 @@ main { flex: 1; }
   margin-top: 15px;
 }
 
+
+
+
+
 /* =========================
    HERO SECTION (البداية)
 ========================= */
@@ -207,63 +211,82 @@ main { flex: 1; }
   flex-direction: column; 
   align-items: center;
   text-align: center; 
-  gap: 1rem; /* خلي في مسافة بسيطة بدل 0 */
+  gap: 1.5rem; /* مسافة أكبر شوي بين العناصر */
 }
 
 .hero-media { 
   width: 100%; 
   display: flex; 
+  flex-direction: column;   /* ✅ يخلي الصورة فوق والنص تحت */
   justify-content: center; 
-  margin-top: 100px;
+  align-items: center;
+  margin-top: 80px;
 }
-
-
 
 .hero-media video,
-.hero-media iframe {
+.hero-media img {
   width: 100%; 
   max-width: 1000px; 
-  height: auto;       /* ✅ يتأقلم مع العرض */
+  height: auto;       
   border: none; 
   display: block;
+  border-radius: 8px; /* لمسة جمالية */
 }
 
-/* iframe desktop */
-.hero-media iframe { 
-  height: 720px;      /* ✅ بدل 800px */
-  margin-top: 20px;   /* ✅ أقل من 60px */
+/* النص تحت الصورة */
+.hero-media a {
+  display: flex;
+  flex-direction: column;   /* ✅ يخلي النص تحت الصورة */
+  align-items: center;
+  text-align: center;
+  color: var(--text-mid);        
+  font-size: 14px;    
+  font-weight: 600;   
+  margin-top: 10px;    
+  text-decoration: none; 
+  gap: 0.5rem;
 }
 
+.hero-media a:hover {
+  color: var(--text-hover);  
+}
 
+/* النصوص */
 .hero-content h1 { 
   font-size: 2rem; 
   font-weight: bold; 
   color: var(--text-main); 
-  margin-top: 1rem;   /* ✅ مسافة واضحة فوق العنوان */
+  margin-top: 1rem;   
 }
 
 .hero-content p { 
   font-size: 1rem; 
   color: var(--text-p); 
   max-width: 700px; 
-  margin: 0.5rem auto; /* ✅ مسافة وسطية للفقرات */
+  margin: 0.5rem auto; 
 }
 
-.hero-content h3 { 
-  font-size: 1.1rem; 
-  font-weight: 600; 
-  margin-top: 1rem; 
-  color: var(--text-link); 
+.hero-media iframe {
+  width: 100%; 
+  max-width: 1000px; 
+  height: 720px;     
+  border: none; 
+  display: block;
+  margin-top: 20px;  /* مسافة موحدة */
 }
 
-.hero-content a { 
-  text-decoration: none; 
+.btn-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #2c56d0;   /* لون الخلفية */
+  color: #fff;           /* لون النص */
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none; /* شيل الخط السفلي */
+  border-radius: 8px;    /* زوايا ناعمة */
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
 }
-
-.hero-content a:hover h3 { 
-  color: var(--text-hover); 
-}
-
 
 /* =========================
    GALLERY SECTION (المعرض)
@@ -308,10 +331,13 @@ main { flex: 1; }
   position: relative; margin: 0; overflow: hidden;
   border-radius: 8px; background: var(--bg-section);
   cursor: pointer;
+  border: 1px solid #c8c7c7;
 }
 .tile img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+  
+
 }
 .tile::after {
   content: ""; position: absolute; inset: 0;
@@ -717,6 +743,11 @@ body.modal-open {
   text-align: center;
 }
 
+.hero-media img {
+  width: 100%;
+}
+
+
 .hero-content h1 {
   font-size: 1.3rem;
   margin-top: 0.1rem;
@@ -729,23 +760,21 @@ body.modal-open {
   margin: 0 0 12px;  /* 👈 مسافة صغيرة تحت الفقرة */
 }
 
-/* الزر */
-.hero-content .btn-car {
+.hero-media a {
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--text-link);   /* نفس لون الروابط */
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  text-align: center;
+  color: var(--text-mid);        /* لون النص */
+  font-size: 12px;    /* حجم الخط */
+  font-weight: 600;   /* سماكة */
+  margin-top: 8px;    /* مسافة فوق النص */
+  text-decoration: none; /* شيل الخط السفلي */
 }
 
-.hero-content .btn-car:hover {
-  background: var(--text-hover); /* يتغير عند التمرير */
-  color: #fff;
+.hero-media a:hover {
+  color: var(--text-main);    /* لون عند المرور */
 }
+
+
 /* Car Viewer End */
 
 
