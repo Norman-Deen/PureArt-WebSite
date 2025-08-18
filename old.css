@@ -1,347 +1,301 @@
+/* =========================
+   MAIN STYLE (الأساسيات)
+========================= */
 
-#header { min-height: 100px; }  /* على قد حجم الهيدر */
-#footer { min-height: 250px; }  /* على قد حجم الفوتر */
-
-
+/* 🎨 المتغيرات (الألوان والخلفيات) */
 :root {
-  --text-main: #4a4a4a; /* اللون الأساسي للنصوص */
-  --text-P: #5b5b5b; /* اللون الأساسي للنصوص */
-  --text-link: #543e3e; /* اللون الأساسي للنصوص */
+  --text-main: #4a4a4a;     /* نص رئيسي */
+  --text-p: #5b5b5b;        /* نص الفقرات */
+  --text-link: #543e3e;     /* لون الروابط */
+  --text-hover: #2c56d0;    /* لون عند التمرير */
+  --text-soft: #636363;     /* رمادي ناعم */
+  --text-mid: #5e5e5e;      /* رمادي متوسط */
+  --text-dark: #444;        /* رمادي غامق */
+  --text-muted: #766e6e;    /* رمادي باهت */
+
+  --bg-light: #ffffff;      /* خلفية عامة */
+  --bg-section: #e8f0ec;    /* خلفية للأقسام */
+  --border-light: #ddd;     /* حدود خفيفة */
 }
 
-
-
-
-
-/* === Make footer stick to bottom === */
-html,
-body {
+/* 🔄 إعادة ضبط العناصر الأساسية */
+html, body {
   height: 100%;
   margin: 0;
-}
-
-body {
-  display: flex;
+  padding: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+  background: var(--bg-light);  /* خلفية افتراضية */
+  color: var(--text-main);      /* نص رئيسي */
+  display: flex;                /* لعمل footer مثبت */
   flex-direction: column;
 }
 
-main {
-  flex: 1; /* pushes footer down */
-}
-/* === End footer fix === */
+h1, h2, h3, p { margin: 0 0 .5rem; }
 
-/* Dropdown container */
-.dropdown {
-  position: relative;
-  list-style: none;
+p {
+  margin: 0.5rem 0;
+  color: var(--text-p);   /* لون الفقرات */
 }
 
-/* Hide dropdown content by default */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  min-width: 180px;
-  z-index: 1000;
-}
-
-/* Show menu on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Menu links */
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #000;
-}
-
-.dropdown-menu li a:hover {
-  background: #4f7cff;
-  color: #fff;
-}
-
-body {
-  font-family: sans-serif;
-  color: #000;
-  background: #fff;
-  margin: 0;
-  line-height: 1.6;
-}
-
+/* 📐 الحاويات */
 .container {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1120px;
+  margin: 0 auto;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
-.section {
-  padding: 3rem 0;
-}
+.section { padding: 3rem 0; }
+
+/* شبكات 3 أعمدة */
 .grid-3 {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
-h1,
-h2,
-h3 {
-  margin: 0 0 0.5rem;
-}
-p {
-  margin: 0.5rem 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
+/* =========================
+   CARDS (البطاقات)
+========================= */
 .card {
   padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+.card.gallery { background: rgba(255,255,255,0.74); }
 
+/* =========================
+   BUTTONS (الأزرار)
+========================= */
 .btn {
   display: inline-block;
   padding: 0.8rem 1rem;
-  text-decoration: none;
   border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-.btn--primary {
-  background: var(--text-link);
-  color: #fff;
-}
-.btn--ghost {
-  border: 1px solid #ccc;
-  color: #000;
-}
+.btn--primary { background: var(--text-link); color: var(--bg-light); }
+.btn--primary:hover { background: var(--text-hover); }
+.btn--ghost { border: 1px solid var(--border-light); color: var(--text-main); }
+.btn--ghost:hover { border-color: var(--text-hover); color: var(--text-hover); }
 
-/* === Header === */
+/* 🦶 لتثبيت الـ footer أسفل الصفحة */
+main { flex: 1; }
+
+/* =========================
+   HEADER (الرأس)
+========================= */
 .site-header {
+  margin-top: 40px;
   padding: 20px 40px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  background-color: #e8f0ec;
+  background-color: var(--bg-section); /* خلفية فاتحة للرأس */
 }
 
 .nav-center {
   display: flex;
-  justify-content: center; /* يحطهم في الوسط */
-  align-items: center; /* محاذاة عمودية */
-  gap: 500px; /* مسافة بين الشعار والروابط */
-}
-
-.nav-links {
-  display: flex;
-  gap: 100px; /* مسافة بين الروابط */
-}
-
-.logo-wrapper {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 550px; /* مسافة كبيرة بين اللوغو والقائمة */
 }
 
-.logo-wrapper a {
-  text-decoration: none;
-  color: inherit;
+/* شعار الموقع */
+.logo-wrapper { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px;           /* 👈 صغّرنا المسافة بين الصورة والنص */
 }
 
-.logo-wrapper img {
-  height: 70px;
-  display: block;
+.logo-wrapper a { 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.logo-wrapper img { 
+  height: 50px;        /* 👈 كان 70px → صغّرناه */
+  display: block; 
 }
 
 .logo-wrapper h2 {
-  margin: 0;
-  color: #5e5e5e;
-
-  font-size: 2rem;
-  font-weight: bold;
+  margin: 0; 
+  font-size: 1.4rem;   /* 👈 كان 2rem → أصغر */
+  font-weight: bold; 
+  color: var(--text-main);
 }
 
+
+/* روابط القائمة */
+.nav-links {
+  display: flex; align-items: center; gap: 60px; list-style: none;
+  margin: 0; padding: 0;
+}
 .nav-links a {
   text-decoration: none;
-  color: #5e5e5e;
+  color: var(--text-mid);    /* رمادي متوسط */
   font-weight: 500;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
+.nav-links a:hover { color: var(--text-hover); }
 
-.nav-links a:hover {
-  color: #4f7cff;
-}
-
-/* قائمة المنسدلة */
-.dropdown {
-  position: relative;
-}
-
+/* 📂 القائمة المنسدلة */
+.dropdown { position: relative; list-style: none; }
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  background: #fff;
+  position: absolute; top: 100%; left: 0;
+  background: var(--bg-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-}
+  padding: 10px 0; margin: 0; min-width: 180px; z-index: 1000;
 
-.dropdown-menu li {
-  padding: 5px 20px;
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
-.dropdown-menu li a {
-  color: #000;
-}
-
 .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.dropdown-menu li a {
+  display: block; padding: 10px 15px;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.dropdown-menu li a:hover {
+  background: var(--text-hover);
+  color: var(--bg-light);
+}
+
+/* =========================
+   FOOTER (التذييل)
+========================= */
+.site-footer {
+  background: var(--bg-section);  /* خلفية فاتحة */
+  text-align: center;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid var(--border-light);
+}
+.site-footer p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-p);
+}
+.site-footer img {
+  height: 90px;
+  margin: 20px auto;
   display: block;
 }
-/* === Header End === */
+.site-footer .copyright {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-top: 15px;
+}
 
-/* === HERO Section Custom Styles === */
-.hero.section {
-  padding: 0; /* إلغاء البادينج العلوي والسفلي */
+/* =========================
+   HERO SECTION (البداية)
+========================= */
+.hero.section { 
+  padding: 0; 
 }
 
 .hero-grid-vertical {
-  display: flex;
-  flex-direction: column;
+  display: flex; 
+  flex-direction: column; 
   align-items: center;
-  text-align: center;
-  margin-bottom: 0;
-  gap: 0; /* إلغاء المسافة بين العناصر */
+  text-align: center; 
+  gap: 1rem; /* خلي في مسافة بسيطة بدل 0 */
 }
 
-/* ميديا الفيديو أو iframe */
-.hero-media {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+.hero-media { 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 100px;
 }
+
+
 
 .hero-media video,
 .hero-media iframe {
-  width: 100%;
-  max-width: 1000px;
-  border: none;
+  width: 100%; 
+  max-width: 1000px; 
+  height: auto;       /* ✅ يتأقلم مع العرض */
+  border: none; 
   display: block;
 }
 
-.hero-media iframe {
-  height: 800px;
-  margin-top: 60px; /* مسافة أعلى الـ iframe */
+/* iframe desktop */
+.hero-media iframe { 
+  height: 720px;      /* ✅ بدل 800px */
+  margin-top: 20px;   /* ✅ أقل من 60px */
 }
 
-/* نصوص الـ Hero */
-.hero-content h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--text-main);
-  margin: 10px 0 0.5rem; /* دمج margin-top و margin-bottom */
+
+.hero-content h1 { 
+  font-size: 2rem; 
+  font-weight: bold; 
+  color: var(--text-main); 
+  margin-top: 1rem;   /* ✅ مسافة واضحة فوق العنوان */
 }
 
-.hero-content p {
-  font-size: 1rem;
-  color: var(--text-P);
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0; /* إلغاء أي مسافة إضافية */
+.hero-content p { 
+  font-size: 1rem; 
+  color: var(--text-p); 
+  max-width: 700px; 
+  margin: 0.5rem auto; /* ✅ مسافة وسطية للفقرات */
 }
 
-.hero-content h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  color: var(--text-link);
-  text-decoration: none;
+.hero-content h3 { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  margin-top: 1rem; 
+  color: var(--text-link); 
 }
 
-.hero-content a {
-  text-decoration: none;
+.hero-content a { 
+  text-decoration: none; 
 }
 
-.hero-content a:hover h3 {
-  color: #2c56d0; /* لون مختلف عند التمرير */
+.hero-content a:hover h3 { 
+  color: var(--text-hover); 
 }
 
-/*--- gallery ---*/
-.section.gallery {
-  background-color: #e8f0ec; /* خلفية القسم */
-  padding: 40px 0;
-}
+
+/* =========================
+   GALLERY SECTION (المعرض)
+========================= */
+.section.gallery { background: var(--bg-section); padding: 100px 0; margin-top: 60px; }
 .section.gallery .container.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
 }
-.section.gallery .card.gallery {
-  overflow: hidden;
-  text-align: center;
-}
-/* تغليف الصورة */
-.section.gallery .card.gallery .img-wrap {
-  position: relative;
-  overflow: hidden;
-}
-
-/* الصورة */
+.section.gallery .card.gallery { overflow: hidden; text-align: center; }
+.section.gallery .card.gallery .img-wrap { position: relative; overflow: hidden; }
 .section.gallery .card.gallery .img-wrap img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  
-  transition: transform 0.4s ease, filter 0.4s ease;
+  width: 100%; height: 200px; object-fit: cover;
+  transition: transform .4s ease, filter .4s ease;
 }
-/* تأثير hover على الصورة */
 .section.gallery .card.gallery .img-wrap:hover img {
-  transform: scale(1.07);
-  filter: brightness(1.6);
+  transform: scale(1.07); filter: brightness(1.6);
 }
-
-.section.gallery .card.gallery .img-wrap:hover::after {
-  opacity: 1;
-}
-
-/* النص أسفل الصورة */
 .section.gallery .card.gallery h3 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #766e6e; /* لون خاص */
-}
-/*--- gallery End ---*/
-
-/* === mosaic === */
-.section.mosaic {
-  margin-top: 70px; /* نزّل القسم 80 بكسل */
-  margin-bottom: 50px;
-  color: #7a7a7a;
+  font-size: 1.5rem; font-weight: 600; color: var(--text-muted);
 }
 
+/* =========================
+   MOSAIC (فسيفساء الصور)
+========================= */
+.section.mosaic { margin: 70px 0 50px; color: var(--text-soft); }
 .mosaic-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  gap: 2rem; margin-bottom: 1rem;
 }
+.mosaic-head small { margin-left: auto; color: var(--text-dark); }
 
-.mosaic-head small {
-  margin-left: auto;
-  color: #444;
-}
-
-/* الشبكة */
 .mosaic-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -351,300 +305,465 @@ img {
 }
 
 .tile {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #eee;
+  position: relative; margin: 0; overflow: hidden;
+  border-radius: 8px; background: var(--bg-section);
   cursor: pointer;
 }
-
 .tile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 100%; object-fit: cover; display: block;
   transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
 }
-
-/* fade-out بعد tile img عشان يغلب */
-.mosaic-grid img.fade-out {
-  opacity: 0;
-}
-
-/* أحجام خاصة */
-.tile.wide {
-  grid-column: span 2;
-}
-.tile.tall {
-  grid-row: span 2;
-}
-.tile.big {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-/* طبقة اللون */
 .tile::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0; transition: opacity 0.4s ease;
   pointer-events: none;
 }
+.tile:hover img { transform: scale(1.05); filter: brightness(1.1); }
+.tile:hover::after { opacity: 1; }
+.tile.wide { grid-column: span 2; }
+.tile.tall { grid-row: span 2; }
+.tile.big  { grid-column: span 2; grid-row: span 2; }
 
-/* hover */
-.tile:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-.tile:hover::after {
-  opacity: 1;
-}
-
-.mosaic-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* يخلي الصورة تملأ المربع */
-  aspect-ratio: 4 / 3; /* نسبة ثابتة للمكان قبل تحميل الصورة */
-  transition: opacity 0.5s ease;
-}
-
-/* === mosaic End === */
-
-/* نافذة الـ Modal */
-/* pointer على صور الموزاييك */
-.mosaic img {
-  cursor: pointer;
-}
-
-/* Modal */
+/* =========================
+   MODAL (النوافذ المنبثقة)
+========================= */
 .modal {
-  /* أساسيات فقط */
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  display: none;
-  padding: 20px;
-}
-.modal.open {
-  display: flex;
+  background: rgba(0,0,0,.88);
+  display: none; /* مخفي بالبداية */
   align-items: center;
   justify-content: center;
-  flex-direction: column-reverse; /* الزر تحت الصورة */
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+  flex-direction: column-reverse;
   gap: 12px;
 }
+
 .modal-content {
   max-width: 90vw;
   max-height: 80vh;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-  display: block;
 }
 
 .modal .close {
-  position: static; /* تأكد مو fixed */
   align-self: center;
   padding: 10px 18px;
   border: 0;
   border-radius: 999px;
-  background: #fff;
-  color: #111;
-  font-weight: 600;
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
-/* اختيارية: منع تمرير الخلفية عند الفتح */
 body.modal-open {
   overflow: hidden;
 }
 
-@keyframes pop {
-  from {
-    transform: scale(0.96);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
-.site-footer {
-  background: #e8f0ec; /* لون خلفية فاتح */
-  text-align: center;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-}
 
-.site-footer p {
-  max-width: 600px;
-  margin: 0 auto 20px;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.site-footer img {
-  height: 90px;
-  margin: 15px 0;
-}
-
-.site-footer .copyright {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-/* ===== Exterior page styles ===== */
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
-  margin-bottom: 50px;
-}
-
-/* ===== Exterior page styles ===== */
+/* =========================
+   FILM PAGE (صفحة الفيديو)
+========================= */
 .exterior-hero img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
+  width: 100%; max-height: 400px; object-fit: cover;
+  border-radius: 8px; display: block; margin: 0 auto;
 }
-
-.exterior-text {
-  padding-top: 20px;
-}
-
-.exterior-box {
-  background: #e8f0ec;
-  padding: 36px 28px;
-  text-align: center;
-}
-
-.exterior-box h2 {
-  font-size: 2.2rem;
-  margin: 0 0 12px;
-  color: #434343;
-}
-
-.exterior-box p {
-  margin: 30px auto;
-  max-width: 720px;
-  line-height: 1.7;
-  color: #5b5b5b;
-}
-
-.section {
-  padding: 1rem 0;
-}
-
-/* خلي الخلفية الخضراء داخل عرض الـcontainer فقط */
-.exterior-gallery {
-  background: transparent;
-  padding: 40px 0;
-}
-
-.exterior-gallery .container {
-  background: #e8f0ec;
-  padding: 28px;
-  max-width: 1090px;
-}
-
-/* شبكة الصور */
 .ex-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; margin-top: 40px; justify-content: center;
+}
+.video-card {
+  max-width: 400px; margin: 0 auto; text-align: center;
+  transition: transform 0.3s ease;
+}
+.video-card:hover { transform: translateY(-6px); }
+.video-card figure { aspect-ratio: 4/3; overflow: hidden; margin: 0; border-radius: 8px; }
+.video-card video {
+  width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.video-card video:hover { filter: brightness(1.2); transform: scale(1.02); }
+.video-card p {
+  margin: 12px 0 0; font-size: 1.1rem; font-weight: 500; color: var(--text-main);
 }
 
+/* =========================
+   EXTERIOR PAGE (الصور الخارجية)
+========================= */
+.exterior-hero img {
+  width: 100%; height: 250px; object-fit: cover;
+  display: block; margin: 0 auto; border-radius: 0;
+}
+.exterior-box {
+  background: var(--bg-section); padding: 36px 28px;
+  text-align: center; border-radius: 0;
+}
+.exterior-box h2 { font-size: 2.2rem; margin: 0 0 12px; color: var(--text-main); }
+.exterior-box p { margin: 30px auto; max-width: 720px; line-height: 1.7; color: var(--text-p); }
+
+.exterior-gallery { background: transparent; padding: 40px 0; }
+.exterior-gallery .container {
+  background: var(--bg-section); padding: 28px; max-width: 1090px;
+}
+.exterior-gallery h3 {
+  text-align: center;   /* ✅ يخلي العنوان بالنص */
+  margin-bottom: 12px;  /* مسافة صغيرة تحت */
+}
+
+.exterior-gallery p {
+  text-align: center;   /* ✅ يخلي الفقرات بالنص */
+  max-width: 700px;     /* تحديد عرض مناسب */
+  margin: 0 auto 15px;  /* وسّطها وحدد مسافة تحت */
+  line-height: 1.6;
+}
 .ex-grid-2 figure {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  aspect-ratio: 4 / 3; /* نسبة ثابتة */
-  cursor: pointer; /* شكل اليد */
+  position: relative; margin: 0; overflow: hidden;
+  aspect-ratio: 4 / 3; cursor: pointer;
 }
-
-/* تأثير الصورة والطبقة */
 .ex-grid-2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 100%; object-fit: cover; display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
-
 .ex-grid-2 figure::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0, 0, 0, 0.3); opacity: 0;
+  transition: opacity 0.4s ease; pointer-events: none;
 }
+.ex-grid-2 figure:hover img { transform: scale(1.05); filter: brightness(1.1); }
+.ex-grid-2 figure:hover::after { opacity: 1; }
 
-.ex-grid-2 figure:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-.ex-grid-2 figure:hover::after {
-  opacity: 1;
-}
-
-/* رابط المزيد */
 .ex-more {
+  text-align: center; margin: 60px 0 0; font-size: 1.5rem; color: var(--text-soft);
+}
+.ex-more a { font-weight: 600; text-decoration: underline; color: var(--text-link); }
+.ex-more img { height: 70px; vertical-align: middle; margin: 0 6px; }
+
+
+
+
+
+
+
+
+
+
+
+/* 📱 Mobile responsive */
+@media (max-width: 739px) {
+
+
+
+  .logo-wrapper {
+    margin-top: 20px;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center; /* 👈 يخليهم بالنص */
+    gap: 40px;               /* 👈 قللنا المسافة شوي لتناسب الموبايل */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links > * {
+    display: inline-block;
+  }
+
+  /* خففنا البادينغ للسيكشن بالموبايل */
+  .section { 
+    padding: 1.5rem 0; 
+  }
+
+  .site-header {
+    margin-top: 0;
+    padding: 10px 20px;
+  }
+
+  .hero-media iframe {
+    width: 100% !important;
+    height: 80vh !important; /* نص ارتفاع الشاشة */
+    margin-top: 20px;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .hero-media {
+    margin-top: 40px;
+    padding: 0 !important;
+  }
+
+ .hero-grid-vertical {
+    gap: 0.1rem;          /* 👈 قلل المسافة بين العناصر */
+    padding: 0 10px;      /* 👈 أضف شوية مسافة يمين/يسار */
+  }
+  
+  .nav-center {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section.gallery .container.gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .ex-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* ✅ العناوين */
+  h1, .hero-content h1 { font-size: 1rem !important; }
+  h2, .hero-content h2 { font-size: 1.1rem !important; }
+  h3, .hero-content h3 { font-size: 1rem !important; }
+
+  /* ✅ الفقرات */
+  p, .site-footer p, .hero-content p, .exterior-box p {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  /* ✅ نصوص المعرض */
+  .section.gallery .card.gallery h3 {
+    font-size: 1rem !important;
+  }
+
+  /* ✅ نصوص الفوتر */
+  .site-footer .copyright {
+    font-size: 0.75rem !important;
+  }
+
+
+  /* GALLERY */
+ .section.gallery .container.gallery {
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 15px;
+  }
+
+   .section.gallery {
+    padding: 40px 10px; /* ✅ فوق/تحت 40px، يمين/يسار 10px */
+    margin-top: 20px;
+  }
+
+  .section.gallery .card.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .section.gallery .card.gallery .img-wrap {
+    width: 100%;
+    height: 160px;   /* ✅ نفس الارتفاع لكل الصور */
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .section.gallery .card.gallery .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✅ يملأ الصندوق ويقص الزائد */
+    display: block;
+  }
+
+  .section.gallery .card.gallery h3 {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+/* GALLERY End */
+
+
+/* GALLERY mosaic */
+.section.mosaic {
+  margin: 10px 0;        /* قلل الهوامش */
+  padding: 10px;         /* أضف مسافة داخلية */
+}
+
+.mosaic-head {
+  flex-direction: column;
+  gap: 0.1rem;
   text-align: center;
-  margin: 60px 0 0;
-  font-size: 1.5rem;
-
-  color: #696969;
 }
 
-.ex-more a {
-  font-weight: 600;
-  text-decoration: underline;
+.mosaic-head h2 {
+  margin: 0 0 1px;   /* 👈 قلل المسافة بين العنوان والسطر التاني */
 }
 
-.ex-more img {
-  height: 70px; /* ارتفاع الأيقونة */
-  width: auto; /* يحافظ على النسبة */
-  vertical-align: middle; /* يخليها بنفس خط النص */
-  margin: 0 6px; /* مسافة يمين ويسار */
+.mosaic-head small {
+  margin: 0;
+  font-size: 0.85rem;
 }
 
-/* ===== Exterior page styles End ===== */
-
-/* ===== close PopUp Win ===== */
-.close {
-  cursor: pointer;
-  background: #4f7cff;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  font-size: 1rem;
-  border-radius: 4px;
+.mosaic-grid {
+  grid-template-columns: repeat(2, 1fr); /* عمودين بدل 6 */
+  grid-auto-rows: 80px;                 /* خفف الطول */
+  gap: 6px;
 }
 
-.close:hover {
-  background: #767676; /* لون عند التمرير */
+/* عدل أحجام البلوكات الكبيرة */
+.tile.wide,
+.tile.big {
+  grid-column: span 2;   /* تاخد عرض الشبكة */
 }
-/* ===== End ===== */
 
-/* ===== GALLERY mosaic  ===== */
+.tile.tall,
+.tile.big {
+  grid-row: span 1;      /* ✅ خليها ارتفاع عادي بالموبايل */
+}
+
+
+
+/* خلي الصور ترجع تبين بسلاسة */
 .mosaic-grid img {
+  opacity: 1;
   transition: opacity 0.5s ease;
 }
-.mosaic-grid img.fade-out {
-  opacity: 0;
+
+
+
+
+
+/* GALLERY mosaic End */
+
+
+  /* Footer  */
+   .site-footer {
+    padding: 15px 15px; /* قلل البادينغ */
+  }
+
+  .site-footer p {
+    font-size: 0.9rem;   /* خط أصغر */
+    line-height: 1.4;    /* تباعد أقل */
+    margin-bottom: 15px; /* فراغ أقل */
+  }
+
+  .site-footer img {
+    height: 60px;        /* صورة اللوجو أصغر */
+    margin: 15px auto;
+  }
+
+  .site-footer .copyright {
+    font-size: 0.75rem;  /* خط أصغر */
+    margin-top: 10px;
+  }
+/* Footer End  */
+
+
+   /* exterior  */
+ .exterior-hero img {
+    height: 100px;        /* ✅ أصغر للموبايل */
+    border-radius: 0;
+  }
+
+  .exterior-box {
+    padding: 20px 15px;   /* ✅ قلل الحشوات */
+  }
+
+  .exterior-box h2 {
+    font-size: 1.4rem;    /* ✅ أصغر من 2.2rem */
+    margin-bottom: 10px;
+  }
+
+.exterior-box p {
+  margin: 4px 0;        /* ✅ مسافة صغيرة بس */
+  line-height: 1.4;     
+}
+
+
+  .exterior-gallery {
+    padding: 20px 0;      /* ✅ قلل المسافة */
+  }
+
+  .exterior-gallery .container {
+
+    padding: 5px;        /* ✅ قلل الحشوات الداخلية */
+    
+  }
+
+  .ex-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ عمود واحد بالموبايل */
+    gap: 12px;
+  }
+
+  .ex-more {
+    margin: 30px 0 0;
+    font-size: 1rem;      /* ✅ خط أصغر */
+  }
+
+  .ex-more img {
+    height: 40px;         /* ✅ صورة أصغر */
+    margin: 0 4px;
+  }
+   /* exterior End */
+
+
+/* Car Viewer */
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 1.3rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.hero-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 12px;  /* 👈 مسافة صغيرة تحت الفقرة */
+}
+
+/* الزر */
+.hero-content .btn-car {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--text-link);   /* نفس لون الروابط */
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-content .btn-car:hover {
+  background: var(--text-hover); /* يتغير عند التمرير */
+  color: #fff;
+}
+/* Car Viewer End */
+
+
+
+  .ex-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ عمودين */
+    gap: 10px;
+  }
+
+  .ex-grid-2 img {
+    width: 100%;          /* ✅ كل صورة تاخد عرض العمود */
+    height: auto;         /* ✅ ارتفاع يتأقلم */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+
+
 }
