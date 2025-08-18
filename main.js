@@ -1,33 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("mediaModal");
-  if (!modal) return; // 👈 وقف الكود إذا مافي مودال بهالصفحة
+  if (!modal) return; // Stop if page has no modal
 
   const modalImg = document.getElementById("modalImg");
   const modalVideo = document.getElementById("modalVideo");
   const closeBtn = modal.querySelector(".close");
   const body = document.body;
 
+  // Hide both by default
   modalImg.style.display = "none";
   modalVideo.style.display = "none";
 
   document.addEventListener("click", (e) => {
     const img = e.target.closest(".mosaic img, .ex-grid-2 img");
     const video = e.target.closest(".ex-grid-2 video");
-    if (!img && !video) return;
+    if (!img && !video) return; // Ignore clicks outside
 
-    // إخفاء الاثنين أولاً
+    // Reset both first
     modalImg.style.display = "none";
     modalVideo.style.display = "none";
 
     if (img) {
+      // Load full-size image
       modalImg.src = img.dataset.full || img.src;
       modalImg.style.display = "block";
     } else if (video) {
+      // Play video inside modal
       modalVideo.src = video.src;
       modalVideo.style.display = "block";
       modalVideo.muted = true;
       modalVideo.play().then(() => {
-        modalVideo.muted = false;
+        modalVideo.muted = false; // unmute after autoplay starts
       }).catch((err) => {
         console.warn("Autoplay blocked:", err);
       });
@@ -37,13 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.add("modal-open");
   });
 
+  // Close modal function
   const closeModal = () => {
     modal.classList.remove("open");
     body.classList.remove("modal-open");
     modalVideo.pause();
-    modalVideo.src = "";
+    modalVideo.src = ""; // reset video
   };
 
+  // Close handlers: button, backdrop click, ESC key
   closeBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
@@ -54,15 +59,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-
-
-//GALLERY mosaic
+// ===== Dynamic year in footer =====
 document.addEventListener("DOMContentLoaded", () => {
-const imageList = [
-  
-  "assets/img/studio-light-30-cam-05.jpg",
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear(); // Auto-update year
+  }
+});
+
+
+// ===== Mosaic Gallery Randomizer =====
+document.addEventListener("DOMContentLoaded", () => {
+  // Full list of available images (main .jpg paths)
+  const imageList = [
+    "assets/img/studio-light-30-cam-05.jpg",
   "assets/img/spirit-vik.jpg",
   "assets/img/spirit-u-b.jpg",
   "assets/img/product-bar.jpg",
@@ -169,8 +179,6 @@ const imageList = [
   "assets/img/other-01.jpg",
   "assets/img/other.jpg",
   "assets/img/music-symbol.jpg",
-
-  "assets/img/kommod-360.jpg",
   "assets/img/interior-bar.jpg",
   "assets/img/interior-35.jpg",
   "assets/img/interior-34.jpg",
@@ -231,23 +239,28 @@ const imageList = [
   "assets/img/animation-women-shadow.jpg",
   "assets/img/360-bar.jpg",
   "assets/img/360.jpg",
-];
+  ];
 
-const mosaicImages = document.querySelectorAll(".mosaic-grid img");
+  const mosaicImages = document.querySelectorAll(".mosaic-grid img");
 
-if (mosaicImages.length > 0) {
-  setInterval(() => {
-    const randomImage =
-      mosaicImages[Math.floor(Math.random() * mosaicImages.length)];
-    const randomSrc = imageList[Math.floor(Math.random() * imageList.length)];
+  if (mosaicImages.length > 0) {
+    setInterval(() => {
+      // Pick random image element in mosaic
+      const randomImage =
+        mosaicImages[Math.floor(Math.random() * mosaicImages.length)];
+      // Pick random source from imageList
+      const randomSrc = imageList[Math.floor(Math.random() * imageList.length)];
 
-    randomImage.classList.add("fade-out");
-    setTimeout(() => {
-      randomImage.src = randomSrc
-        .replace("assets/img/", "assets/img/thumb/")
-        .replace(".jpg", "-thumb.webp");
-      randomImage.dataset.full = randomSrc;
-      randomImage.classList.remove("fade-out");
-    }, 500);
-  }, 2000);
-}});
+      // Fade-out effect before changing
+      randomImage.classList.add("fade-out");
+      setTimeout(() => {
+        // Use thumbnail version in mosaic, full in dataset
+        randomImage.src = randomSrc
+          .replace("assets/img/", "assets/img/thumb/")
+          .replace(".jpg", "-thumb.webp");
+        randomImage.dataset.full = randomSrc;
+        randomImage.classList.remove("fade-out");
+      }, 500);
+    }, 2000); // Every 2 seconds
+  }
+});

@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>360</title>
- <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
+  <title>360</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-
-<!-- Header -->
+<!-- Dynamic header injection -->
 <div id="header"></div>
 <script>
 fetch("../components/header.html")
@@ -20,14 +20,14 @@ fetch("../components/header.html")
   });
 </script>
 
-
-
+<!-- Hero banner -->
 <section class="exterior-hero section">
   <div class="container">
     <img src="../assets/img/360-bar.jpg" alt="Exteriör">
   </div>
 </section>
 
+<!-- Intro text explaining 360° and AR features -->
 <section class="exterior-text section">
   <div class="container">
     <div class="exterior-box">
@@ -57,136 +57,107 @@ fetch("../components/header.html")
   </div>
 </section>
 
-
-
-
+<!-- Gallery with 360° demo videos -->
 <section class="exterior-gallery section">
   <div class="container">
-
-
-<div class="container">
-    
-<h2 style="margin:30px 20px 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">Click On pic to play</h2>
+    <h2 style="margin:30px 20px 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">Click On pic to play</h2>
     <div class="ex-grid-2">
 
+      <!-- 360 video 1 -->
+      <div class="video-card" style="width:100%; max-width:400px; text-align:center;">
+        <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
+          <video 
+            src="../assets/video/Dush-360.mp4" 
+            poster="../assets/img/dush-360.jpg" 
+            style="width:100%; height:100%; object-fit:cover; display:block;">
+          </video>
+        </figure>
+        <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
+          Dusch-360°
+        </p>
+      </div>
 
+      <!-- 360 video 2 -->
+      <div class="video-card" style="width:100%; max-width:400px; text-align:center;">
+        <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
+          <video 
+            src="../assets/video/Kommod-360.mp4" 
+            poster="../assets/img/kommod-360.jpg" 
+            style="width:100%; height:100%; object-fit:cover; display:block;">
+          </video>
+        </figure>
+        <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
+          Kommod-360°
+        </p>
+      </div>
+    </div>
 
+    <!-- Embedded interactive 3D Car demo (iframe) -->
+    <div class="container hero-grid-vertical">
+      <figure class="hero-media">
+        <iframe 
+          src="https://norman-deen.github.io/CarJsShowcase/" 
+          loading="lazy" 
+          title="Interactive 3D Car Viewer">
+        </iframe>
+      </figure>
 
-<div class="video-card" style="width:100%; max-width:400px; text-align:center;">
-  <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
-    <video 
-      src="../assets/video/Dush-360.mp4" 
-      poster="../assets/img/dush-360.jpg" 
-      style="width:100%; height:100%; object-fit:cover; display:block;">
-    </video>
-  </figure>
-  <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
-    Dusch-360°
-  </p>
-</div>
+      <div class="hero-content">
+        <h1>3D Car</h1>
+        <p>
+          Experience this fully interactive 3D car viewer built with modern
+          web technologies like Three.js. Open doors, switch camera views, and
+          try out different body colors – all in real-time! This is a
+          non-commercial demo created to demonstrate 3D programming and
+          visualization skills. The car model was modified and adapted for
+          compatibility. No official branding is used.
+        </p>
 
-
-<div class="video-card" style="width:100%; max-width:400px; text-align:center;">
-  <figure style="aspect-ratio:4/3; overflow:hidden; margin:0;">
-    <video 
-      src="../assets/video/Kommod-360.mp4" 
-      poster="../assets/img/kommod-360.jpg" 
-      style="width:100%; height:100%; object-fit:cover; display:block;">
-    </video>
-  </figure>
-  <p style="margin:10px 0 0; font-size:1.2rem; font-weight:500; color:#333; text-align:center;">
-    Kommod-360°
-  </p>
-</div>
-
-
-
-</div>
-
-
-<div class="container hero-grid-vertical">
-  <figure class="hero-media">
-    <iframe 
-      src="https://norman-deen.github.io/CarJsShowcase/" 
-      loading="lazy" 
-      title="Interactive 3D Car Viewer">
-    </iframe>
-  </figure>
-
-  <div class="hero-content">
-    <h1>3D Car</h1>
-    <p>
-      Experience this fully interactive 3D car viewer built with modern
-      web technologies like Three.js. Open doors, switch camera views, and
-      try out different body colors – all in real-time! This is a
-      non-commercial demo created to demonstrate 3D programming and
-      visualization skills. The car model was modified and adapted for
-      compatibility. No official branding is used.
-    </p>
-
-   <a href="https://norman-deen.github.io/CarJsShowcase/" target="_blank" rel="noopener noreferrer" class="btn-link">
-  Click to Open Car3D
-</a>
-
+        <!-- Link to open car demo directly -->
+        <a href="https://norman-deen.github.io/CarJsShowcase/" target="_blank" rel="noopener noreferrer" class="btn-link">
+          Click to Open Car3D
+        </a>
+      </div>
+    </div>
   </div>
-</div>
-
-
-
 </section>
 
-
-
+<!-- Extra info / Behance link -->
 <section class="exterior-gallery section">
   <div class="container">
-   
-<p>
-Most of the images related to bathrooms for MacroDesign.
-</p>
-
-<p class="ex-more">
-  More fantastic works can be found on
-  <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">
-    <img src="../assets/img/behance-logo.png" alt="Behance">
- 
-   
-  </a>
-</p>
-
+    <p>
+      Most of the images related to bathrooms for MacroDesign.
+    </p>
+    <p class="ex-more">
+      More fantastic works can be found on
+      <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">
+        <img src="../assets/img/behance-logo.png" alt="Behance">
+      </a>
+    </p>
   </div>
-
 </section>
 
-
-
-
-
-<!-- footer -->
+<!-- Dynamic footer injection -->
 <div id="footer"></div>
-
 <script>
 fetch("../components/footer.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
   });
-
 </script>
 
-
-
-<!-- نافذة العرض -->
+<!-- Modal for gallery (shared with main.js) -->
 <div id="mediaModal" class="modal">
   <button class="close" aria-label="Close">Close</button>
   <img class="modal-content" id="modalImg" />
   <video class="modal-content" id="modalVideo" controls></video>
 </div>
 
-
-
-
-
 <script src="../main.js"></script>
-
 </body>
 </html>

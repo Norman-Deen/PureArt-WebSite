@@ -4,16 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="High-end 3D & Motion Design – Product renders, animations, and immersive visuals built with Three.js." />
-   <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
-
-
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <title>Pure Art</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- Header -->
+
+
+    <!-- Dynamic Header will be injected from components/header.html -->
     <div id="header"></div>
     <script>
+      // Fetch header HTML fragment and inject it into #header
       fetch("./components/header.html")
         .then((res) => res.text())
         .then((data) => {
@@ -21,207 +22,211 @@
         });
     </script>
 
-    <!-- HERO 1 -->
+
+
+    <!-- HERO SECTION -->
     <section class="hero section">
       <div class="container hero-grid-vertical">
 
-
-<figure class="hero-media">
-  <a href="/pages/film.html">
-    <video 
-      src="/assets/video/Ferrari458-LowFast.mp4" 
-      autoplay 
-      muted 
-      loop 
-      playsinline>
-      <track kind="captions" src="captions.vtt" srclang="en" label="English">
-    </video>
-  </a>
-</figure>
-
-
-
-
-
+        <figure class="hero-media">
+          <a href="/pages/film.html">
+            <!-- Background video: autoplay + muted + loop (important for Chrome autoplay policy) -->
+            <video 
+              src="/assets/video/Ferrari458-LowFast.mp4" 
+              autoplay 
+              muted 
+              loop 
+              playsinline>
+              <!-- Track element for captions (accessibility) -->
+              <track kind="captions" src="captions.vtt" srclang="en" label="English">
+            </video>
+          </a>
         </figure>
 
-        
+        <!-- NOTE: There is an extra </figure> tag here that might be unnecessary -->
+
         <div class="hero-content">
           <h1>High-end 3D & Motion Design</h1>
           <p>Product renders, animation, and immersive visuals.</p>
         </div>
       </div>
 
+      <!-- Second hero block with 3D Car demo -->
+      <div class="container hero-grid-vertical">
+        <figure class="hero-media">
+          <a href="https://norman-deen.github.io/CarJsShowcase/" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="assets/img/car3d.JPG" 
+              alt="3D Car Preview" 
+              loading="lazy"> 
+              <!-- Adding text inside <a> for CTA -->
+              Click to Open Car3D
+          </a>
+        </figure>
 
-
-<div class="container hero-grid-vertical">
-<figure class="hero-media">
-  <a href="https://norman-deen.github.io/CarJsShowcase/" target="_blank" rel="noopener noreferrer">
-    <img 
-      src="assets/img/car3d.JPG" 
-      alt="3D Car Preview" 
-      loading="lazy"> 
-        Click to Open Car3D
-  </a>
-</figure>
-
-  <div class="hero-content">
-    <h1>3D Car</h1>
-    <p>
-      Experience this fully interactive 3D car viewer built with modern
-      web technologies like Three.js. Open doors, switch camera views, and
-      try out different body colors – all in real-time! This is a
-      non-commercial demo created to demonstrate 3D programming and
-      visualization skills. The car model was modified and adapted for
-      compatibility. No official branding is used.
-    </p>
-  </div>
-</div>
-
+        <div class="hero-content">
+          <h1>3D Car</h1>
+          <p>
+            Experience this fully interactive 3D car viewer built with modern
+            web technologies like Three.js. Open doors, switch camera views, and
+            try out different body colors – all in real-time! This is a
+            non-commercial demo created to demonstrate 3D programming and
+            visualization skills. The car model was modified and adapted for
+            compatibility. No official branding is used.
+          </p>
+        </div>
+      </div>
     </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="section gallery">
-  <div class="container gallery">
+    <!-- PROJECT GALLERY -->
+    <section id="gallery" class="section gallery">
+      <div class="container gallery">
 
-    <article class="card gallery">
-      <a href="pages/exterior.html">
-        <div class="img-wrap">
-          <img src="assets/img/thumb/exterior-01-thumb.webp" alt="Project 01" loading="lazy">
+        <!-- Each gallery card links to a subpage -->
+        <article class="card gallery">
+          <a href="pages/exterior.html">
+            <div class="img-wrap">
+              <img src="assets/img/thumb/exterior-01-thumb.webp" alt="Project 01" loading="lazy">
+            </div>
+          </a>
+          <h3>Exterior</h3>
+        </article>
+
+        <article class="card gallery">
+          <a href="pages/interior.html">
+            <div class="img-wrap">
+              <img src="assets/img/thumb/interior-04-thumb.webp" alt="Project 02" loading="lazy">
+            </div>
+          </a>
+          <h3>Interior</h3>
+        </article>
+
+        <article class="card gallery">
+          <a href="pages/product.html">
+            <div class="img-wrap">
+              <img src="assets/img/thumb/product-thumb.webp" alt="Project 03" loading="lazy">
+            </div>
+          </a>
+          <h3>Product</h3>
+        </article>
+
+        <article class="card gallery">
+          <a href="pages/film.html">
+            <div class="img-wrap">
+              <img src="assets/img/thumb/film-thumb.webp" alt="Project 04" loading="lazy">
+            </div>
+          </a>
+          <h3>Film</h3>
+        </article>
+
+        <article class="card gallery">
+          <a href="pages/360.html">
+            <div class="img-wrap">
+              <img src="assets/img/thumb/360-thumb.webp" alt="Project 05" loading="lazy">
+            </div>
+          </a>
+          <h3>360°-AR</h3>
+        </article>
+
+        <article class="card gallery">
+          <a href="pages/other.html">
+            <div class="img-wrap">
+              <img src="assets/img/thumb/other-15-thumb.webp" alt="Project 06" loading="lazy">
+            </div>
+          </a>
+          <h3>Other</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- MOSAIC GALLERY with modal -->
+    <section class="section mosaic">
+      <div class="container">
+        <div class="mosaic-head">
+          <h2>What we can do for you</h2>
+          <small>click to open image</small>
         </div>
-      </a>
-      <h3>Exterior</h3>
-    </article>
 
-    <article class="card gallery">
-      <a href="pages/interior.html">
-        <div class="img-wrap">
-          <img src="assets/img/thumb/interior-04-thumb.webp" alt="Project 02" loading="lazy">
+        <div class="mosaic-grid">
+          <!-- Tiles show thumbnails, full image path stored in data-full -->
+          <figure class="tile big">
+            <img src="assets/img/thumb/exterior-07-thumb.webp" 
+                 data-full="assets/img/exterior-07.jpg" 
+                 alt="Exterior 07" loading="lazy">
+          </figure>
+
+          <figure class="tile tall">
+            <img src="assets/img/thumb/product-34-thumb.webp" 
+                 data-full="assets/img/product-34.jpg" 
+                 alt="Product 34" loading="lazy">
+          </figure>
+
+          <figure class="tile">
+            <img src="assets/img/thumb/product-02-thumb.webp" 
+                 data-full="assets/img/product-02.jpg" 
+                 alt="Product 02" loading="lazy">
+          </figure>
+
+          <figure class="tile wide">
+            <img src="assets/img/thumb/other-11-thumb.webp" 
+                 data-full="assets/img/other-11.jpg" 
+                 alt="Other 11" loading="lazy">
+          </figure>
+
+          <figure class="tile">
+            <img src="assets/img/thumb/other-08-thumb.webp" 
+                 data-full="assets/img/other-08.jpg" 
+                 alt="Other 08" loading="lazy">
+          </figure>
+
+          <figure class="tile big">
+            <img src="assets/img/thumb/other-12-thumb.webp" 
+                 data-full="assets/img/other-12.jpg" 
+                 alt="Other 12" loading="lazy">
+          </figure>
+
+          <figure class="tile tall">
+            <img src="assets/img/thumb/other-15-thumb.webp" 
+                 data-full="assets/img/other-15.jpg" 
+                 alt="Other 15" loading="lazy">
+          </figure>
+
+          <figure class="tile wide">
+            <img src="assets/img/thumb/interior-23-thumb.webp" 
+                 data-full="assets/img/interior-23.jpg" 
+                 alt="Interior 23" loading="lazy">
+          </figure>
         </div>
-      </a>
-      <h3>Interior</h3>
-    </article>
+      </div>
+    </section>
 
-    <article class="card gallery">
-      <a href="pages/product.html">
-        <div class="img-wrap">
-          <img src="assets/img/thumb/product-thumb.webp" alt="Project 03" loading="lazy">
-        </div>
-      </a>
-      <h3>Product</h3>
-    </article>
-
-    <article class="card gallery">
-      <a href="pages/film.html">
-        <div class="img-wrap">
-          <img src="assets/img/thumb/film-thumb.webp" alt="Project 04" loading="lazy">
-        </div>
-      </a>
-      <h3>Film</h3>
-    </article>
-
-    <article class="card gallery">
-      <a href="pages/360.html">
-        <div class="img-wrap">
-          <img src="assets/img/thumb/360-thumb.webp" alt="Project 05" loading="lazy">
-        </div>
-      </a>
-      <h3>360°-AR</h3>
-    </article>
-
-    <article class="card gallery">
-      <a href="pages/other.html">
-        <div class="img-wrap">
-          <img src="assets/img/thumb/other-15-thumb.webp" alt="Project 06" loading="lazy">
-        </div>
-      </a>
-      <h3>Other</h3>
-    </article>
-
-  </div>
-</section>
-
-
-
-<!-- GALLERY mosaic -->
-<section class="section mosaic">
-  <div class="container">
-    <div class="mosaic-head">
-      <h2>What we can do for you</h2>
-      <small>click to open image</small>
-    </div>
-
-    <div class="mosaic-grid">
-      <figure class="tile big">
-        <img src="assets/img/thumb/exterior-07-thumb.webp" 
-             data-full="assets/img/exterior-07.jpg" 
-             alt="Exterior 07" loading="lazy">
-      </figure>
-
-      <figure class="tile tall">
-        <img src="assets/img/thumb/product-34-thumb.webp" 
-             data-full="assets/img/product-34.jpg" 
-             alt="Product 34" loading="lazy">
-      </figure>
-
-      <figure class="tile">
-        <img src="assets/img/thumb/product-02-thumb.webp" 
-             data-full="assets/img/product-02.jpg" 
-             alt="Product 02" loading="lazy">
-      </figure>
-
-      <figure class="tile wide">
-        <img src="assets/img/thumb/other-11-thumb.webp" 
-             data-full="assets/img/other-11.jpg" 
-             alt="Other 11" loading="lazy">
-      </figure>
-
-      <figure class="tile">
-        <img src="assets/img/thumb/other-08-thumb.webp" 
-             data-full="assets/img/other-08.jpg" 
-             alt="Other 08" loading="lazy">
-      </figure>
-
-      <figure class="tile big">
-        <img src="assets/img/thumb/other-12-thumb.webp" 
-             data-full="assets/img/other-12.jpg" 
-             alt="Other 12" loading="lazy">
-      </figure>
-
-      <figure class="tile tall">
-        <img src="assets/img/thumb/other-15-thumb.webp" 
-             data-full="assets/img/other-15.jpg" 
-             alt="Other 15" loading="lazy">
-      </figure>
-
-      <figure class="tile wide">
-        <img src="assets/img/thumb/interior-23-thumb.webp" 
-             data-full="assets/img/interior-23.jpg" 
-             alt="Interior 23" loading="lazy">
-      </figure>
-    </div>
-  </div>
-</section>
-
-
-    <!-- نافذة العرض -->
+    <!-- MODAL for mosaic images -->
     <div id="mediaModal" class="modal">
       <button class="close" aria-label="Close">Close</button>
       <img class="modal-content" id="modalImg" />
       <video class="modal-content" id="modalVideo" controls></video>
     </div>
 
-    <!-- footer -->
-    <div id="footer"></div>
+    
+<!-- Dynamic Footer will be injected -->
+<div id="footer"></div>
+<script>
+  // Fetch footer fragment and inject into #footer
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
 
-    <script>
-      fetch("./components/footer.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("footer").innerHTML = data;
-        });
-    </script>
+      // ✅ Now footer exists, insert current year
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+</script>
 
+
+    <!-- Main site JS -->
     <script src="./main.js" defer></script>
   </body>
 </html>

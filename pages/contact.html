@@ -3,90 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact</title>
- <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
+  <title>Contact</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-
-<!-- Header -->
+<!-- Dynamic Header will be injected -->
 <div id="header"></div>
 <script>
-fetch("../components/header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
+  // Fetch header fragment and inject into #header
+  fetch("../components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
 </script>
 
-
- <main>
-
-
-
-
-<section class="exterior-text section">
-  <div class="container">
-    <div class="exterior-box">
-      <h2>Contact</h2>
-      <h3>Get in Touch!</h3>
-    <p>
-        Email:
-        <a href="mailto:pure-art@outlook.com">pure-art@outlook.com</a>
-      </p>
+<main>
+  <!-- Contact section with email -->
+  <section class="exterior-text section">
+    <div class="container">
+      <div class="exterior-box">
+        <h2>Contact</h2>
+        <h3>Get in Touch!</h3>
+        <p>
+          Email:
+          <a href="mailto:pure-art@outlook.com">pure-art@outlook.com</a>
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Studio description section -->
+  <section class="exterior-text section">
+    <div class="container">
+      <div class="exterior-box">
+        <h2>Pure art Studio</h2>
+        <p>
+          We are an experienced graphic design studio with nearly twenty years of expertise in image and video design. 
+          Originating from the Middle East, we have run our own business for many years, taking on projects in advertising, 
+          marketing, websites, animation, and games. We have primarily worked with large companies, especially in the Middle East and Dubai.
+        </p>
+        <p>
+          We offer a wide range of services in architectural visualization, from simple sketches to support the design process, 
+          to photorealistic images, animations, and interactive designs.
+        </p>
+        <p>
+          Feel free to contact us to learn more about our services.
+        </p>
 
-<section class="exterior-text section">
-  <div class="container">
-    <div class="exterior-box">
-      <h2>Pure art Studio</h2>
-      
-    <p>
-       We are an experienced graphic design studio with nearly twenty years of expertise in image and video design. Originating from the Middle East, we have run our own business for many years, taking on projects in advertising, marketing, websites, animation, and games. We have primarily worked with large companies, especially in the Middle East and Dubai.
-
-We offer a wide range of services in architectural visualization, from simple sketches to support the design process, to photorealistic images, animations, and interactive designs.
-
-Feel free to contact us to learn more about our services.
-       
-      <p class="ex-more">
-  More fantastic works can be found on
-  <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">
-    <img src="../assets/img/behance-logo.png" alt="Behance">
-   
-  </a>
-</p>
+        <!-- External link to Behance profile -->
+        <p class="ex-more">
+          More fantastic works can be found on
+          <a href="https://www.behance.net/pure-art" target="_blank" rel="noopener">
+            <img src="../assets/img/behance-logo.png" alt="Behance">
+          </a>
+        </p>
+      </div>
     </div>
-  </div>
-</section>
-
-
-
-
-
+  </section>
 </main>
 
-
-
-<!-- footer -->
+<!-- Dynamic Footer will be injected -->
 <div id="footer"></div>
-
 <script>
-fetch("../components/footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+  // Fetch footer fragment and inject into #footer
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
 
+      // ✅ Now footer exists, insert current year
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
 </script>
-
-
-
-
-
 
 
 <script src="../main.js"></script>
