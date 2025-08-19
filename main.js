@@ -268,43 +268,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ===== Inject Cookie Banner on all pages =====
-document.addEventListener("DOMContentLoaded", () => {
-  if (!document.getElementById("cookie-banner")) {
-    const banner = document.createElement("div");
-    banner.id = "cookie-banner";
-    banner.innerHTML = `
-      This website uses cookies to improve your experience.
-      <button id="accept-cookies">Accept</button>
-    `;
-    document.body.appendChild(banner);
-  }
+// ===== Google Analytics (load directly on all pages) =====
+(function(){
+  const gaScript = document.createElement("script");
+  gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-DZW0DYH2TY";
+  gaScript.async = true;
+  document.head.appendChild(gaScript);
 
-  // ===== Google Analytics (load only after cookie consent) =====
-  function loadGoogleAnalytics() {
-    const gaScript = document.createElement("script");
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-DZW0DYH2TY";
-    gaScript.async = true;
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', 'G-DZW0DYH2TY');
-  }
-
-  if (localStorage.getItem("cookiesAccepted")) {
-    loadGoogleAnalytics();
-    document.getElementById("cookie-banner").style.display = "none";
-  } else {
-    const acceptBtn = document.getElementById("accept-cookies");
-    if (acceptBtn) {
-      acceptBtn.addEventListener("click", () => {
-        localStorage.setItem("cookiesAccepted", "true");
-        document.getElementById("cookie-banner").style.display = "none";
-        loadGoogleAnalytics();
-      });
-    }
-  }
-});
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-DZW0DYH2TY');
+})();

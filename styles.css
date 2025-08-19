@@ -562,38 +562,6 @@ body.modal-open {
 }
 
 
-/* Cookie banner */
-#cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #496e68;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-size: 14px;
-  z-index: 9999;
-}
-
-/* Accept button */
-#accept-cookies {
-  margin-left: 10px;
-  padding: 6px 12px;
-  background: #4CAF50;
-  border: none;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#accept-cookies:hover {
-  background: #45a049; 
-}
-
-
-
-
 
 
 /* -------📱 Mobile responsive---------- */
@@ -852,24 +820,5 @@ body.modal-open {
     display: block;
     transition: transform 0.4s ease, filter 0.4s ease;
   }
-
-/* Cookie banner button */
-  #cookie-banner {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  #accept-cookies {
-    margin-left: 5px;
-    padding: 8px 16px;
-    font-size: 13px;
-    width: 50%;        
-    margin-top: 5px;   
-  }
-
-
-
-
-
 
 } /* end media query */
