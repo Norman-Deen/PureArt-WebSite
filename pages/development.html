@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZW0DYH2TY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DZW0DYH2TY');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+  <title>Development</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- Dynamic Header will be injected -->
+<div id="header"></div>
+<script>
+  fetch("../components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+
+<main>
+  <!-- Development Page -->
+  <section class="exterior-text section">
+    <div class="container">
+      <div class="exterior-box">
+        <h2>Development Services</h2>
+        <h3>What I Can Build for You</h3>
+        <p>
+          With a background in both <strong>web development</strong> and <strong>3D visualization</strong>, 
+          I create modern, fast, and creative solutions that combine functionality with engaging design.
+        </p>
+        <p>
+           <strong>Web Development</strong> – Full-stack apps using .NET, Svelte, React, Supabase, REST APIs, and cloud (Azure/AWS). <br>
+           <strong>Frontend Engineering</strong> – Responsive, accessible, and high-performance UI with HTML, CSS, JS, and TypeScript. <br>
+           <strong>Creative Coding & WebGL</strong> – Interactive 3D experiences using Three.js and WebGL. <br>
+           <strong>Backend & APIs</strong> – Secure and scalable APIs with .NET, Node.js, Go, and database integration. <br>
+           <strong>Optimization & SEO</strong> – Performance tuning, SEO architecture, and analytics setup.
+        </p>
+        <p>
+          I enjoy combining <strong>code + design + 3D</strong> to create solutions that are both 
+          technically solid and visually engaging.
+        </p>
+<p class="ex-more">
+   Explore more on 
+  <a href="https://github.com/Norman-Deen" target="_blank" rel="noopener">GitHub</a> | 
+   Connect with me on 
+  <a href="https://www.linkedin.com/in/nour-tinawi/" target="_blank" rel="noopener">LinkedIn</a>
+</p>
+
+
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<!-- Dynamic Footer will be injected -->
+<div id="footer"></div>
+<script>
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+</script>
+
+<script src="../main.js"></script>
+</body>
+</html>
