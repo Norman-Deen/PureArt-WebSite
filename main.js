@@ -179,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
   "assets/img/other-01.jpg",
   "assets/img/other.jpg",
   "assets/img/music-symbol.jpg",
-  "assets/img/interior-bar.jpg",
   "assets/img/interior-35.jpg",
   "assets/img/interior-34.jpg",
   "assets/img/interior-33.jpg",
@@ -237,7 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
   "assets/img/classicbathroom.jpg",
   "assets/img/badrum-24-animation.jpg",
   "assets/img/animation-women-shadow.jpg",
-  "assets/img/360-bar.jpg",
   "assets/img/360.jpg",
   ];
 
