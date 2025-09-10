@@ -84,7 +84,7 @@ main { flex: 1; }
 /* ===== HEADER ===== */
 .site-header {
   margin-top: 40px;
-  padding: 20px 40px;
+
   background-color: var(--bg-section); /* Light background for header */
 }
 
@@ -92,7 +92,7 @@ main { flex: 1; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 550px; /* Large space between logo and nav */
+  gap: 580px; /* Large space between logo and nav */
 }
 
 /* Logo */
@@ -108,7 +108,7 @@ main { flex: 1; }
 }
 
 .logo-wrapper img { 
-  height: 50px;        /* Changed from 70px → smaller */
+  height: 80px;        /* Changed from 70px → smaller */
   display: block; 
 }
 
@@ -594,11 +594,7 @@ body.modal-open {
     padding: 1.5rem 0; 
   }
 
-  /* Header more compact */
-  .site-header {
-    margin-top: 0;
-    padding: 10px 20px;
-  }
+
 
   /* Hero iframe responsive height */
   .hero-media iframe {
