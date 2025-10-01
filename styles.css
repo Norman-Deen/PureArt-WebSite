@@ -131,6 +131,9 @@ main { flex: 1; }
   80%, 100% { transform: rotate(360deg); }
 }
 
+#header { min-height: 120px; }  /* قدّر حسب ارتفاع الهيدر */
+#footer { min-height: 200px; }  /* قدّر حسب ارتفاع الفوتر */
+
 
 
 
@@ -238,6 +241,8 @@ main { flex: 1; }
   border: none; 
   display: block;
   border-radius: 8px; /* Rounded corners for media */
+
+    aspect-ratio: 16 / 9;  /* ✅ يحجز مكان بنسبة صحيحة */
 }
 
 /* Text under image/video */
@@ -372,6 +377,7 @@ main { flex: 1; }
   object-fit: cover; 
   display: block;
   transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+   aspect-ratio: 1 / 1; /* أو حسب صورك (wide=2/1, tall=1/2) */
 }
 .tile::after {
   content: ""; 

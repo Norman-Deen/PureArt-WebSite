@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZW0DYH2TY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZW0DYH2TY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DZW0DYH2TY');
+  </script>
 
-  gtag('config', 'G-DZW0DYH2TY');
-</script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="High-end 3D & Motion Design – Product renders, animations, and immersive visuals built with Three.js." />
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
-   <title>Pure Art | 3D Visualization & Motion Design Studio</title>
-<meta name="description" content="Pure Art creates high-end 3D visualization, product renders, animations, and interactive WebGL experiences. Explore our portfolio: cars, interiors, exteriors, films, and immersive digital design.">
-<meta name="keywords" content="Pure Art, 3D visualization, motion design, product renders, 3D car showcase, interior visualization, exterior visualization, Three.js, WebGL, interactive 3D, animation studio">
-<meta name="author" content="Pure Art Studio">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+  <title>Pure Art | 3D Visualization & Motion Design Studio</title>
+  <meta name="description" content="Pure Art creates high-end 3D visualization, product renders, animations, and interactive WebGL experiences. Explore our portfolio: cars, interiors, exteriors, films, and immersive digital design.">
+  <meta name="keywords" content="Pure Art, 3D visualization, motion design, product renders, 3D car showcase, interior visualization, exterior visualization, Three.js, WebGL, interactive 3D, animation studio">
+  <meta name="author" content="Pure Art Studio">
 
-<!-- Open Graph (for social preview) -->
-<meta property="og:title" content="Pure Art | 3D Visualization & Motion Design Studio">
-<meta property="og:description" content="High-end 3D visualization, motion design, and interactive experiences. Explore our portfolio of cars, interiors, products, films, and more.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.pure-art.co/">
-<meta property="og:image" content="https://www.pure-art.co/assets/img/preview-home.jpg">
+  <!-- Open Graph (for social preview) -->
+  <meta property="og:title" content="Pure Art | 3D Visualization & Motion Design Studio">
+  <meta property="og:description" content="High-end 3D visualization, motion design, and interactive experiences. Explore our portfolio of cars, interiors, products, films, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pure-art.co/">
+  <meta property="og:image" content="https://www.pure-art.co/assets/img/preview-home.jpg">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pure Art | 3D Visualization & Motion Design Studio">
-<meta name="twitter:description" content="Explore Pure Art's portfolio of 3D visualization, animation, and interactive digital design.">
-<meta name="twitter:image" content="https://www.pure-art.co/assets/img/preview-home.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pure Art | 3D Visualization & Motion Design Studio">
+  <meta name="twitter:description" content="Explore Pure Art's portfolio of 3D visualization, animation, and interactive digital design.">
+  <meta name="twitter:image" content="https://www.pure-art.co/assets/img/preview-home.jpg">
 
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preload" as="image" href="/assets/img/logo-01.jpg">
+  <!-- ✅ Preload CSS -->
+  <link rel="preload" href="./styles.css" as="style">
+  <link rel="stylesheet" href="./styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="./styles.css"></noscript>
 
-  </head>
+<!-- ✅ Preload important media -->
+
+
+<link rel="preload" href="assets/img/Porsche911.JPG" as="image" fetchpriority="high">
+
+
+  <!-- Logo image preload -->
+  <link rel="preload" as="image" href="/assets/img/logo-01.jpg">
+</head>
+
   
 
 
@@ -58,21 +68,25 @@
     <!-- HERO SECTION -->
     <section class="hero section">
       <div class="container hero-grid-vertical">
+<figure class="hero-media">
+  <a href="/pages/film.html"  target="_blank"  aria-label="Watch Ferrari 458 Film">
+    <!-- Background video: autoplay + muted + loop (important for Chrome autoplay policy) -->
+<video
+  src="/assets/video/Ferrari458-LowFast.mp4"
+  width="1280"
+  height="720"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  fetchpriority="high"
+  aria-label="Ferrari 458 driving showcase">
+</video>
 
-        <figure class="hero-media">
-          <a href="/pages/film.html">
-            <!-- Background video: autoplay + muted + loop (important for Chrome autoplay policy) -->
-            <video 
-              src="/assets/video/Ferrari458-LowFast.mp4" 
-              autoplay 
-              muted 
-              loop 
-              playsinline>
-              <!-- Track element for captions (accessibility) -->
-              <track kind="captions" src="captions.vtt" srclang="en" label="English">
-            </video>
-          </a>
-        </figure>
+  </a>
+</figure>
+
 
         <!-- NOTE: There is an extra </figure> tag here that might be unnecessary -->
 
@@ -85,15 +99,21 @@
       <!-- Second hero block with 3D Car demo -->
       <div class="container hero-grid-vertical">
         <figure class="hero-media">
-          <a href="https://Porsche911.pure-art.co" target="_blank" rel="noopener noreferrer">
-            <img 
-              src="assets/img/Porsche911.JPG" 
-              alt="3D Car Preview" 
-              loading="lazy"> 
-              <!-- Adding text inside <a> for CTA -->
-              Click to Open Car3D
-          </a>
-        </figure>
+  <a href="https://Porsche911.pure-art.co" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Open interactive 3D Porsche 911 viewer">
+    <img 
+      src="assets/img/Porsche911.JPG" 
+      alt="3D Porsche 911 showcase preview" 
+      width="1280" 
+      height="720" 
+      fetchpriority="high">
+    <!-- Adding text inside <a> for CTA -->
+    Click to Open Car3D
+  </a>
+</figure>
+
 
         <div class="hero-content">
           <h1>3D Car Showcase</h1>
