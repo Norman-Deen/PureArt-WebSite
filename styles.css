@@ -120,7 +120,7 @@ main { flex: 1; }
 }
 
 .logo-link img {
-  animation: spin-hold 6s infinite;
+  animation: spin-hold 24s infinite;
 }
 
 @keyframes spin-hold {
@@ -627,7 +627,7 @@ body.modal-open {
   }
 
   .hero-media {
-    margin-top: 40px;
+    margin-top: 90px;
     padding: 0 !important;
   }
 
