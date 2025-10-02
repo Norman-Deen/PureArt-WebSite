@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZW0DYH2TY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DZW0DYH2TY');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+  <!-- Title & Meta -->
+  <title>Shop – Buy Three.js & WebGL Projects | Pure Art Studio</title>
+  <meta name="description" content="Buy premium Three.js and WebGL interactive 3D projects from Pure Art Studio. Get full source code for 3D product showcases, car demos, interiors, exteriors, and immersive experiences." />
+  <meta name="keywords" content="buy Three.js project, WebGL projects for sale, interactive 3D templates, 3D visualization code, product showcase 3D, immersive WebGL experience, Pure Art Studio" />
+  <meta name="author" content="Pure Art Studio" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.pure-art.co/pages/shop.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Buy Three.js & WebGL Projects | Pure Art Studio" />
+  <meta property="og:description" content="Purchase premium Three.js projects with full source code. Ready-made 3D showcases, interactive product demos, and immersive WebGL templates." />
+  <meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pure-art.co/pages/shop.html" />
+  <meta property="og:image" content="https://www.pure-art.co/assets/img/preview-home.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Buy Three.js & WebGL Projects | Pure Art Studio" />
+  <meta name="twitter:description" content="Explore and buy premium Three.js/WebGL projects with full source code for 3D product visualization and interactive experiences." />
+  <meta name="twitter:image" content="https://www.pure-art.co/assets/img/preview-home.jpg" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<!-- Dynamic Header will be injected -->
+<div id="header"></div>
+<script>
+  // Fetch header fragment and inject into #header
+  fetch("../components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+<main>
+  <!-- Contact section with email -->
+  <section class="exterior-text section">
+    <div class="container">
+      <div class="exterior-box">
+        <h2>Shop</h2>
+   
+
+
+      </div>
+    </div>
+  </section>
+
+<!-- Project description section -->
+<section class="exterior-text section">
+  <div class="container">
+    <div class="exterior-box">
+      <h2>Porsche 911</h2>
+      <h3>3D Interactive Demo</h3>
+
+      <img src="../assets/img/Porsche911.JPG" 
+           alt="Porsche 911 Three.js Demo" 
+           style="max-width:100%; border-radius:8px; margin:12px 0;">
+
+      <p>
+        🚗 <strong>Interactive 3D Porsche 911 Viewer</strong><br>
+        Built with <strong>Three.js</strong>, <strong>GSAP</strong>, and <strong>WebGL</strong>.  
+        Includes cinematic intro, demo mode, paint color customization, interactive hotspots, and audio.
+      </p>
+
+      <h3>Features</h3>
+      <ul>
+        <li>Porsche 911 3D model (GLB, Draco + KTX2 compressed)</li>
+        <li>Cinematic Intro with fade transitions</li>
+        <li>Demo Mode: looping camera + auto paint cycle</li>
+        <li>Color Picker to change car paint (with reset)</li>
+        <li>Hotspots & Popups with text + images</li>
+        <li>Background music & engine sound FX</li>
+        <li>Responsive UI for desktop & mobile</li>
+      </ul>
+
+      <p>
+        ⚙️ Optimized for <strong>4K screens</strong> with adaptive quality:  
+        starts at High, auto-adjusts pixel ratio if FPS drops.  
+        Lightweight FPS sampling ensures smooth performance.
+      </p>
+
+      <p class="ex-more">
+        Vehicle Design © Porsche AG<br>
+        3D Model by Lionsharp – CC BY 4.0<br>
+        Music: Pixabay (<em>The Last Point</em>)<br>
+        Engine SFX: freesound.org
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+<!-- Dynamic Footer will be injected -->
+<div id="footer"></div>
+<script>
+  // Fetch footer fragment and inject into #footer
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+
+      // ✅ Now footer exists, insert current year
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+</script>
+
+
+<script src="../main.js"></script>
+
+</body>
+</html>

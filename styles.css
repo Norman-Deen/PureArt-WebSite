@@ -141,6 +141,7 @@ main { flex: 1; }
 .nav-links {
   display: flex; align-items: center; gap: 60px; list-style: none;
   margin: 0; padding: 0;
+    z-index: 2;
 }
 .nav-links a {
   text-decoration: none;
@@ -604,16 +605,27 @@ body.modal-open {
     gap: 40px;               /* Reduced gap for small screens */
     list-style: none;
     padding: 0;
-    margin: 0;
   }
   .nav-links > * {
     display: inline-block;
   }
 
+  .nav-links a {
+ padding-bottom: 12px; /* مسافة تحت النص */
+  display: inline-block; /* يخلي padding يشتغل */
+}
+
+
   /* Section padding reduced */
   .section { 
     padding: 1.5rem 0; 
   }
+
+
+
+.section:first-of-type {
+  margin-top: 80px;
+}
 
 
 
@@ -627,7 +639,7 @@ body.modal-open {
   }
 
   .hero-media {
-    margin-top: 90px;
+    margin-top: 50px;
     padding: 0 !important;
   }
 
