@@ -302,6 +302,26 @@ main { flex: 1; }
   margin-top: 1rem;
 }
 
+/* Small clean button for "See More 3D Viewer Works" */
+.btn-link.small {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--bg-section);
+  color: rgb(100, 100, 100);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-link.small:hover {
+  background:--bg-section;
+  transform: translateY(-1px);
+   color: rgb(0, 0, 0);
+}
+
+
 /* ===== GALLERY SECTION ===== */
 .section.gallery { 
   background: var(--bg-section); 
@@ -853,3 +873,26 @@ body.modal-open {
   }
 
 } /* end media query */
+
+
+
+
+/* ===== Header fix for tablets (<= 900px) ===== */
+@media (max-width: 900px) {
+  .nav-center {
+  gap: clamp(16px, 12vw, 580px);             /* بدل 580px */
+    justify-content: space-between;
+    padding: 0 12px;
+    flex-wrap: wrap;           /* يسمح بالنزول للسطر عند الحاجة */
+  }
+
+
+
+  .nav-links { gap: 24px; }
+  .nav-links a { font-size: 1rem; }
+}
+
+/* اختيارياً: شدّ أكثر للدقات القريبة من 740px */
+@media (max-width: 780px) {
+  .nav-links { gap: 16px; }
+}
