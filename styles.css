@@ -605,6 +605,13 @@ body.modal-open {
   margin: 0 6px; 
 }
 
+.hero-grid-vertical {
+  border: 1px solid rgb(255, 255, 255); /* لون متناسق */
+  border-radius: 5px;                   /* زوايا ناعمة */
+  margin-top: 20px;
+             
+ 
+}
 
 
 
