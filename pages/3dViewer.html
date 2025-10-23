@@ -99,13 +99,22 @@ fetch("../components/header.html")
 
     <!-- Embedded interactive Porsche 911 demo (iframe) -->
 <div class="container hero-grid-vertical">
-<figure class="hero-media">
+<!-- <figure class="hero-media">
   <img 
     src="../assets/img/Porsche911.JPG" 
     alt="Interactive Porsche 911 Viewer" 
     loading="lazy">
-</figure>
+</figure> -->
 
+<!--video -->
+<video 
+  src="../assets/video/Porsche91Demo.webm"
+ poster="../assets/img/Porsche911.JPG"
+  controls
+  playsinline
+  preload="none"
+  style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; display:block;">
+</video>
 
   <div class="hero-content">
 <h1>Porsche 911 — Interactive 3D Experience</h1>
@@ -129,13 +138,18 @@ fetch("../components/header.html")
 
 <!-- Embedded interactive ModernStillness demo (iframe) -->
 <div class="container hero-grid-vertical">
-<figure class="hero-media">
-  <img 
-    src="../assets/img/modernstillness.jpg" 
-    alt="ModernStillness — Interactive 3D Experience" 
-    loading="lazy">
-</figure>
 
+
+
+<!--video -->
+<video 
+  src="../assets/video/ModernStillness.webm"
+ poster="../assets/img/postwide.jpg"
+  controls
+  playsinline
+  preload="none"
+  style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; display:block;">
+</video>
 
   <div class="hero-content">
     <h1>ModernStillness — Interactive 3D Experience</h1>
@@ -207,6 +221,8 @@ fetch("../components/header.html")
     </p>
   </div>
 </section>
+
+
 
 <!-- Dynamic footer injection -->
 <div id="footer"></div>
