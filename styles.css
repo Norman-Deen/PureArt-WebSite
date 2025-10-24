@@ -613,6 +613,13 @@ body.modal-open {
  
 }
 
+.exterior-gallery h1 {
+  text-align: center;     /* يوسّط العنوان */
+  font-size: 2rem;        /* حجم مناسب */
+  margin-bottom: 1.5rem;  /* مسافة تحت العنوان */
+  color: var(--text-main);
+}
+
 
 
 /* -------📱 Mobile responsive---------- */
