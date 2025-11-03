@@ -450,6 +450,7 @@ main { flex: 1; }
   border-radius: 999px;
   background: var(--bg-light);
   color: var(--text-dark);
+  cursor: pointer;
 }
 
 body.modal-open {
