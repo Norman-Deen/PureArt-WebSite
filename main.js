@@ -324,20 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.appendChild(right);
   }
 
-  // أنماط ثابتة للأسهم
-  const style = document.createElement("style");
-  style.textContent = `
-    .arrow-btn{
-      position: fixed; top:50%; transform: translateY(-50%);
-      font-size: 2rem; color:#fff; background:rgba(0,0,0,.45);
-      border:0; cursor:pointer; padding:.45em .6em; border-radius:10px;
-      z-index:10050; user-select:none; display:none;
-    }
-    .arrow-btn--left  { left: clamp(12px, 2vw, 24px); }
-    .arrow-btn--right { right: clamp(12px, 2vw, 24px); }
-    .arrow-btn:hover { background: rgba(0,0,0,.7); }
-  `;
-  document.head.appendChild(style);
+ 
 
   function showImage(index) {
     if (!imgs.length) return;

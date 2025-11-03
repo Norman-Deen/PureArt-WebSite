@@ -623,6 +623,59 @@ body.modal-open {
 
 
 
+
+
+
+/* ===== Image navigation arrows in modal ===== */
+.arrow-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border: 0;
+  cursor: pointer;
+  padding: 0.45em 0.6em;
+  border-radius: 10px;
+  z-index: 10050;
+  user-select: none;
+  display: none;
+}
+
+.arrow-btn--left  { left: clamp(12px, 2vw, 24px); }
+.arrow-btn--right { right: clamp(12px, 2vw, 24px); }
+
+.arrow-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -------📱 Mobile responsive---------- */
 @media (max-width: 739px) {
 
