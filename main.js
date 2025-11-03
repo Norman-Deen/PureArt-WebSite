@@ -279,3 +279,100 @@ document.addEventListener("DOMContentLoaded", () => {
   gtag('js', new Date());
   gtag('config', 'G-DZW0DYH2TY');
 })();
+
+
+
+
+// ===== Image navigation (← →) inside modal — FIXED =====
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("mediaModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalVideo = document.getElementById("modalVideo");
+  if (!modal || !modalImg) return;
+
+  // كل الصور القابلة للتنقّل
+  const imgs = Array.from(document.querySelectorAll(".ex-grid-2 img, .mosaic img"));
+  let currentIndex = -1;
+
+  // احفظ الفهرس عند فتح صورة
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".ex-grid-2 img, .mosaic img");
+    const vid = e.target.closest(".ex-grid-2 video");
+    if (img) {
+      currentIndex = imgs.indexOf(img);
+      showArrows(true);
+    } else if (vid) {
+      showArrows(false); // فيديو → أخفِ الأسهم
+    }
+  });
+
+  // أزرار الأسهم
+  let left = modal.querySelector(".arrow-btn--left");
+  let right = modal.querySelector(".arrow-btn--right");
+  if (!left) {
+    left = document.createElement("button");
+    left.className = "arrow-btn arrow-btn--left";
+    left.setAttribute("aria-label", "Previous");
+    left.textContent = "◄";
+    modal.appendChild(left);
+  }
+  if (!right) {
+    right = document.createElement("button");
+    right.className = "arrow-btn arrow-btn--right";
+    right.setAttribute("aria-label", "Next");
+    right.textContent = "►";
+    modal.appendChild(right);
+  }
+
+  // أنماط ثابتة للأسهم
+  const style = document.createElement("style");
+  style.textContent = `
+    .arrow-btn{
+      position: fixed; top:50%; transform: translateY(-50%);
+      font-size: 2rem; color:#fff; background:rgba(0,0,0,.45);
+      border:0; cursor:pointer; padding:.45em .6em; border-radius:10px;
+      z-index:10050; user-select:none; display:none;
+    }
+    .arrow-btn--left  { left: clamp(12px, 2vw, 24px); }
+    .arrow-btn--right { right: clamp(12px, 2vw, 24px); }
+    .arrow-btn:hover { background: rgba(0,0,0,.7); }
+  `;
+  document.head.appendChild(style);
+
+  function showImage(index) {
+    if (!imgs.length) return;
+    if (index < 0) index = imgs.length - 1;
+    if (index >= imgs.length) index = 0;
+    currentIndex = index;
+    const img = imgs[currentIndex];
+    // عرض الصورة داخل المودال
+    if (modalVideo) modalVideo.style.display = "none";
+    modalImg.src = img.dataset.full || img.src;
+    modalImg.style.display = "block";
+    showArrows(true);
+  }
+
+  function showArrows(show) {
+    const onImage = show && modal.classList.contains("open") && modalImg.style.display !== "none";
+    left.style.display = onImage ? "block" : "none";
+    right.style.display = onImage ? "block" : "none";
+  }
+
+  left.addEventListener("click", () => showImage(currentIndex - 1));
+  right.addEventListener("click", () => showImage(currentIndex + 1));
+
+  // دعم لوحة المفاتيح
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("open")) return;
+    if (modalImg.style.display === "none") return; // لا تتنقّل إن كان فيديو
+    if (e.key === "ArrowLeft")  { e.preventDefault(); showImage(currentIndex - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); showImage(currentIndex + 1); }
+  });
+
+  // راقب فتح/إغلاق المودال وتبديل المحتوى لإظهار/إخفاء الأسهم تلقائياً
+  const mo = new MutationObserver(() => showArrows(true));
+  mo.observe(modal, { attributes: true, attributeFilter: ["class"] });
+  const mo2 = new MutationObserver(() => showArrows(true));
+  mo2.observe(modalImg,  { attributes: true, attributeFilter: ["style"] });
+  if (modalVideo) mo2.observe(modalVideo, { attributes: true, attributeFilter: ["style"] });
+});
