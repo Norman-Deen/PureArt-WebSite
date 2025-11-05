@@ -869,6 +869,7 @@ body.modal-open {
   }
   .exterior-box {
     padding: 20px 15px;
+    margin-top: 20px;
   }
   .exterior-box h2 {
     font-size: 1.4rem;
